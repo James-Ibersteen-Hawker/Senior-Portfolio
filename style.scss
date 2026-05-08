@@ -23,8 +23,7 @@ $gray: rgb(57, 57, 57);
 }
 @font-face {
     font-family: 'Technology';
-    src: url('Technology-BoldItalic.woff2') format('woff2'),
-        url('Technology-BoldItalic.woff') format('woff');
+    src: url('../fonts/Technology-BoldItalic.woff2') format('woff2');
     font-weight: bold;
     font-style: italic;
     font-display: swap;
@@ -34,9 +33,6 @@ html,
 body {
   width: 100%;
   height: 100%;
-}
-body {
-  background: green;
 }
 
 #time_machine {
@@ -48,10 +44,10 @@ body {
     position: center;
   }
   padding: 28px 10px 10px 10px;
-  position: fixed;
-  height: fit-content;
   width: 95%;
-  max-width: 440px;
+  height: fit-content;
+  max-width: 700px;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -66,25 +62,27 @@ body {
         border-radius: 2px;
         background: rgb(9, 9, 9);
         color: white;
-        font-size: 30px;
-        padding: 6px;
-        line-height: 25px;
+        font-size: 40px;
+        padding: 6px 6px 0px 6px;
+        line-height: 30px;
         flex: 1 1;
         margin: 0 10px;
         text-align: center;
         position: relative;
         box-shadow: 1px -1px 0.7px rgb(87, 87, 87) inset;
+        font-family: 'Technology', sans-serif;
         &::after {
           content: var(--name);
           font: {
             size: 15px;
             variant: small-caps;
+            family: 'Arial', sans-serif;
           }
           position: absolute;
           left: 50%;
           top: -5px;
           transform: translate(-50%, -100%);
-          padding: 0 7px;
+          padding: 0 7px 2px 7px;
           line-height: 13px;
           text-align: center;
           background: rgba(255, 0, 0, 0.834);
@@ -93,6 +91,7 @@ body {
         }
       }
       .ampm {
+        min-width: 25px;
         display: flex;
         flex-direction: column;
         align-items: center;
