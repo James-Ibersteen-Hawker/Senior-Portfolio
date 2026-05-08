@@ -1,41 +1,19 @@
 $gray: rgb(57, 57, 57);
 @use "sass:color";
-@font-face {
-  font-family: "Technology Extravagant";
-  src: url("../fonts/TechnologyExtravagant-Italic.woff2") format("woff2");
-  font-weight: 900;
-  font-style: italic;
-  font-display: swap;
+@each $family, $suffix, $weight, $style in
+  ("Technology Extravagant", "Extravagant-Italic", 900, italic),
+  ("Technology", "-Italic", normal, italic),
+  ("Technology Extravagant", "Extravaganza", normal, normal ),
+  ("Technology", "-BoldItalic", bold, italic),
+  ("Technology", "-Regular", normal, normal) {
+    @font-face {
+      font-family: $family;
+      src: url("../fonts/Technology#{$suffix}.woff2") format("woff2");
+      font-weight: $weight;
+      font-style: $style;
+      font-display: swap;
+    }
 }
-@font-face {
-  font-family: "Technology";
-  src: url("../fonts/Technology-Italic.woff2") format("woff2");
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Technology Extravagant";
-  src: url("../fonts/TechnologyExtravaganza.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Technology";
-  src: url("../fonts/Technology-BoldItalic.woff2") format("woff2");
-  font-weight: bold;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-    font-family: 'Technology';
-    src: url('../fonts/Technology-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
 
 html,
 body {
@@ -43,6 +21,34 @@ body {
   height: 100%;
 }
 
+
+@mixin label {
+  padding: 0 7px 2px 7px;
+  text-align: center;
+  background: rgba(255, 0, 0, 0.834);
+  border-radius: 1px;
+  box-shadow: 0px 0px 1px black inset;
+  color: whitesmoke;
+  text-transform: lowercase;
+  font-variant: small-caps;
+}
+@mixin led-gradient($on) {
+  $color1: if(sass($on): rgb(255, 255, 0); else: rgb(47, 47, 0));
+  $color2: if(sass($on): rgb(40, 30, 0); else: black);
+  background:
+    radial-gradient(at 70% 30%, rgba(255,255,255,0.3), transparent 20%),
+    radial-gradient($color1, $color2);
+}
+@keyframes clock {
+  0%,
+  49.9% {
+    @include led-gradient(false);
+  }
+  50%,
+  99.9% {
+    @include led-gradient(true);
+  }
+}
 #time_machine {
   background: {
     image:
@@ -51,7 +57,7 @@ body {
     size: 100%;
     position: center;
   }
-  padding: 28px 10px 10px 10px;
+  padding: 28px 0px 10px 0px;
   width: 95%;
   height: fit-content;
   max-width: 700px;
@@ -63,14 +69,18 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 25px 0 5px 0;
+    overflow-x: hidden;
+    border-bottom: 3px solid rgb(218, 218, 218);
     .boxes {
+      max-width: 95%;
       display: flex;
       justify-content: space-between;
       .box {
+        font: 60px "Technology", sans-serif;
         border-radius: 2px;
         background: rgb(9, 9, 9);
         color: white;
-        font-size: 60px;
         padding: 10px 3px 0px 6px;
         line-height: 40px;
         flex: 1 1;
@@ -78,24 +88,16 @@ body {
         text-align: center;
         position: relative;
         box-shadow: 1px -1px 0.7px rgb(87, 87, 87) inset;
-        font-family: "Technology", sans-serif;
         &::after {
+          @include label();
           content: var(--name);
-          font: {
-            size: 15px;
-            variant: small-caps;
-            family: "Arial", sans-serif;
-          }
+          font: 15px/13px "Arial", sans-serif;
+          font-variant: small-caps;
           position: absolute;
           left: 50%;
           top: -5px;
           transform: translate(-50%, -100%);
           padding: 0 7px 2px 7px;
-          line-height: 13px;
-          text-align: center;
-          background: rgba(255, 0, 0, 0.834);
-          border-radius: 1px;
-          box-shadow: 0px 0px 1px black inset;
         }
       }
       .ampm {
@@ -103,43 +105,27 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: end;
+        justify-content: flex-end;
         .am,
         .pm {
-          background:
-            radial-gradient(
-              at 70% 30%,
-              rgba(255, 255, 255, 0.3),
-              transparent 20%
-            ),
-            radial-gradient(rgb(47, 47, 0), black);
-          border-radius: 100%;
+          @include led-gradient(false);
+          border-radius: 50%;
           width: 10px;
           height: 10px;
           position: relative;
           &::after {
+            @include label();
             content: var(--label);
             font-size: 13px;
+            line-height: 12px;
             position: absolute;
             top: -1px;
             left: 50%;
             transform: translate(-50%, -100%);
-            background: rgba(255, 0, 0, 0.834);
-            line-height: 12px;
             padding: 0 2px;
-            color: white;
-            font-variant: small-caps;
-            box-shadow: 0px 0px 1px black inset;
-            border-radius: 1px;
           }
           &.on {
-            background:
-              radial-gradient(
-                at 70% 30%,
-                rgba(255, 255, 255, 0.3),
-                transparent 20%
-              ),
-              radial-gradient(rgb(255, 255, 0), rgb(40, 30, 0));
+            @include led-gradient(true)
           }
         }
         .pm {
@@ -157,7 +143,7 @@ body {
           background: black;
           left: 50%;
           transform: translateX(-50%);
-          border-radius: 100%;
+          border-radius: 50%;
           animation-name: clock;
           animation-duration: 0.8s;
           animation-timing-function: linear;
@@ -177,27 +163,12 @@ body {
       color: rgb(212, 212, 212);
       width: fit-content;
       margin-top: 5px;
-      padding: 0 8px;
-      line-height: 18px;
-      font-family: 15px;
+      padding: 0 8px 2px 8px;
+      font: 15px / 16px "Arial", sans-serif;
       font-variant: small-caps;
       text-transform: lowercase;
       box-shadow: 1px -1px 0.6px rgb(42, 42, 42) inset;
       border-radius: 1px;
     }
-  }
-}
-@keyframes clock {
-  0%,
-  49.9% {
-    background:
-      radial-gradient(at 70% 30%, rgba(255, 255, 255, 0.3), transparent 20%),
-      radial-gradient(rgb(47, 47, 0), black);
-  }
-  50%,
-  99.9% {
-    background:
-      radial-gradient(at 70% 30%, rgba(255, 255, 255, 0.3), transparent 20%),
-      radial-gradient(rgb(255, 255, 0), rgb(40, 30, 0));
   }
 }

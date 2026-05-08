@@ -39,11 +39,19 @@ body {
   height: 100%;
 }
 
+@keyframes clock {
+  0%, 49.9% {
+    background: radial-gradient(at 70% 30%, rgba(255, 255, 255, 0.3), transparent 20%), radial-gradient(rgb(47, 47, 0), black);
+  }
+  50%, 99.9% {
+    background: radial-gradient(at 70% 30%, rgba(255, 255, 255, 0.3), transparent 20%), radial-gradient(rgb(255, 255, 0), rgb(40, 30, 0));
+  }
+}
 #time_machine {
   background-image: linear-gradient(to bottom, rgba(57, 57, 57, 0.4)), url(../time-machine/gray-grime.png);
   background-size: 100%;
   background-position: center;
-  padding: 28px 10px 10px 10px;
+  padding: 28px 0px 10px 0px;
   width: 95%;
   height: -moz-fit-content;
   height: fit-content;
@@ -57,16 +65,20 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 25px 0 5px 0;
+  overflow-x: hidden;
+  border-bottom: 3px solid rgb(218, 218, 218);
 }
 #time_machine .circuit .boxes {
+  max-width: 95%;
   display: flex;
   justify-content: space-between;
 }
 #time_machine .circuit .boxes .box {
+  font: 60px "Technology", sans-serif;
   border-radius: 2px;
   background: rgb(9, 9, 9);
   color: white;
-  font-size: 60px;
   padding: 10px 3px 0px 6px;
   line-height: 40px;
   flex: 1 1;
@@ -74,54 +86,58 @@ body {
   text-align: center;
   position: relative;
   box-shadow: 1px -1px 0.7px rgb(87, 87, 87) inset;
-  font-family: "Technology", sans-serif;
 }
 #time_machine .circuit .boxes .box::after {
-  content: var(--name);
-  font-size: 15px;
+  padding: 0 7px 2px 7px;
+  text-align: center;
+  background: rgba(255, 0, 0, 0.834);
+  border-radius: 1px;
+  box-shadow: 0px 0px 1px black inset;
+  color: whitesmoke;
+  text-transform: lowercase;
   font-variant: small-caps;
-  font-family: "Arial", sans-serif;
+  content: var(--name);
+  font: 15px/13px "Arial", sans-serif;
+  font-variant: small-caps;
   position: absolute;
   left: 50%;
   top: -5px;
   transform: translate(-50%, -100%);
   padding: 0 7px 2px 7px;
-  line-height: 13px;
-  text-align: center;
-  background: rgba(255, 0, 0, 0.834);
-  border-radius: 1px;
-  box-shadow: 0px 0px 1px black inset;
 }
 #time_machine .circuit .boxes .ampm {
   min-width: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
 }
 #time_machine .circuit .boxes .ampm .am,
 #time_machine .circuit .boxes .ampm .pm {
   background: radial-gradient(at 70% 30%, rgba(255, 255, 255, 0.3), transparent 20%), radial-gradient(rgb(47, 47, 0), black);
-  border-radius: 100%;
+  border-radius: 50%;
   width: 10px;
   height: 10px;
   position: relative;
 }
 #time_machine .circuit .boxes .ampm .am::after,
 #time_machine .circuit .boxes .ampm .pm::after {
+  padding: 0 7px 2px 7px;
+  text-align: center;
+  background: rgba(255, 0, 0, 0.834);
+  border-radius: 1px;
+  box-shadow: 0px 0px 1px black inset;
+  color: whitesmoke;
+  text-transform: lowercase;
+  font-variant: small-caps;
   content: var(--label);
   font-size: 13px;
+  line-height: 12px;
   position: absolute;
   top: -1px;
   left: 50%;
   transform: translate(-50%, -100%);
-  background: rgba(255, 0, 0, 0.834);
-  line-height: 12px;
   padding: 0 2px;
-  color: white;
-  font-variant: small-caps;
-  box-shadow: 0px 0px 1px black inset;
-  border-radius: 1px;
 }
 #time_machine .circuit .boxes .ampm .am.on,
 #time_machine .circuit .boxes .ampm .pm.on {
@@ -141,7 +157,7 @@ body {
   background: black;
   left: 50%;
   transform: translateX(-50%);
-  border-radius: 100%;
+  border-radius: 50%;
   animation-name: clock;
   animation-duration: 0.8s;
   animation-timing-function: linear;
@@ -160,20 +176,10 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   margin-top: 5px;
-  padding: 0 8px;
-  line-height: 18px;
-  font-family: 15px;
+  padding: 0 8px 2px 8px;
+  font: 15px/16px "Arial", sans-serif;
   font-variant: small-caps;
   text-transform: lowercase;
   box-shadow: 1px -1px 0.6px rgb(42, 42, 42) inset;
   border-radius: 1px;
-}
-
-@keyframes clock {
-  0%, 49.9% {
-    background: radial-gradient(at 70% 30%, rgba(255, 255, 255, 0.3), transparent 20%), radial-gradient(rgb(47, 47, 0), black);
-  }
-  50%, 99.9% {
-    background: radial-gradient(at 70% 30%, rgba(255, 255, 255, 0.3), transparent 20%), radial-gradient(rgb(255, 255, 0), rgb(40, 30, 0));
-  }
 }/*# sourceMappingURL=style.css.map */
