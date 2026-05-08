@@ -1,6 +1,6 @@
-import { createApp, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+import { createApp, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.prod.js'
 import { timeMachine } from './components.js';
-console.log(timeMachine)
+import Fuse from 'https://cdn.jsdelivr.net/npm/fuse.js@7.3.0/+esm'
 
 const App = createApp({
     setup() {
