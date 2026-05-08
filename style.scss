@@ -1,33 +1,41 @@
 $gray: rgb(57, 57, 57);
 @use "sass:color";
 @font-face {
-    font-family: 'Technology Extravagant';
-    src: url('../fonts/TechnologyExtravagant-Italic.woff2') format('woff2');
-    font-weight: 900;
-    font-style: italic;
-    font-display: swap;
+  font-family: "Technology Extravagant";
+  src: url("../fonts/TechnologyExtravagant-Italic.woff2") format("woff2");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Technology";
+  src: url("../fonts/Technology-Italic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Technology Extravagant";
+  src: url("../fonts/TechnologyExtravaganza.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Technology";
+  src: url("../fonts/Technology-BoldItalic.woff2") format("woff2");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
 }
 @font-face {
     font-family: 'Technology';
-    src: url('../fonts/Technology-Italic.woff2') format('woff2');
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Technology Extravagant';
-    src: url('../fonts/TechnologyExtravaganza.woff2') format('woff2');
+    src: url('../fonts/Technology-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
-@font-face {
-    font-family: 'Technology';
-    src: url('../fonts/Technology-BoldItalic.woff2') format('woff2');
-    font-weight: bold;
-    font-style: italic;
-    font-display: swap;
-}
+
 
 html,
 body {
@@ -62,21 +70,21 @@ body {
         border-radius: 2px;
         background: rgb(9, 9, 9);
         color: white;
-        font-size: 40px;
-        padding: 6px 6px 0px 6px;
-        line-height: 30px;
+        font-size: 60px;
+        padding: 10px 3px 0px 6px;
+        line-height: 40px;
         flex: 1 1;
         margin: 0 10px;
         text-align: center;
         position: relative;
         box-shadow: 1px -1px 0.7px rgb(87, 87, 87) inset;
-        font-family: 'Technology', sans-serif;
+        font-family: "Technology", sans-serif;
         &::after {
           content: var(--name);
           font: {
             size: 15px;
             variant: small-caps;
-            family: 'Arial', sans-serif;
+            family: "Arial", sans-serif;
           }
           position: absolute;
           left: 50%;
@@ -98,7 +106,13 @@ body {
         justify-content: end;
         .am,
         .pm {
-          background: radial-gradient(at 70% 30%, rgba(255, 255, 255, 0.3), transparent 20%), radial-gradient(rgb(47, 47, 0), black);
+          background:
+            radial-gradient(
+              at 70% 30%,
+              rgba(255, 255, 255, 0.3),
+              transparent 20%
+            ),
+            radial-gradient(rgb(47, 47, 0), black);
           border-radius: 100%;
           width: 10px;
           height: 10px;
@@ -118,9 +132,42 @@ body {
             box-shadow: 0px 0px 1px black inset;
             border-radius: 1px;
           }
+          &.on {
+            background:
+              radial-gradient(
+                at 70% 30%,
+                rgba(255, 255, 255, 0.3),
+                transparent 20%
+              ),
+              radial-gradient(rgb(255, 255, 0), rgb(40, 30, 0));
+          }
         }
         .pm {
           margin-top: 15px;
+        }
+      }
+      .dots {
+        position: relative;
+        &::after,
+        &::before {
+          content: "";
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          background: black;
+          left: 50%;
+          transform: translateX(-50%);
+          border-radius: 100%;
+          animation-name: clock;
+          animation-duration: 0.8s;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+        }
+        &::after {
+          top: 20%;
+        }
+        &::before {
+          bottom: 20%;
         }
       }
     }
@@ -138,5 +185,19 @@ body {
       box-shadow: 1px -1px 0.6px rgb(42, 42, 42) inset;
       border-radius: 1px;
     }
+  }
+}
+@keyframes clock {
+  0%,
+  49.9% {
+    background:
+      radial-gradient(at 70% 30%, rgba(255, 255, 255, 0.3), transparent 20%),
+      radial-gradient(rgb(47, 47, 0), black);
+  }
+  50%,
+  99.9% {
+    background:
+      radial-gradient(at 70% 30%, rgba(255, 255, 255, 0.3), transparent 20%),
+      radial-gradient(rgb(255, 255, 0), rgb(40, 30, 0));
   }
 }
