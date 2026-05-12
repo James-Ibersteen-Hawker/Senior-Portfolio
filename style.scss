@@ -1,26 +1,34 @@
 $gray: rgb(57, 57, 57);
 @use "sass:color";
-@each $family, $suffix, $weight, $style in
-  ("Technology Extravagant", "Extravagant-Italic", 900, italic),
+@each $family, $suffix, $weight,
+  $style in ("Technology Extravagant", "Extravagant-Italic", 900, italic),
   ("Technology", "-Italic", normal, italic),
-  ("Technology Extravagant", "Extravaganza", normal, normal ),
+  ("Technology Extravagant", "Extravaganza", normal, normal),
   ("Technology", "-BoldItalic", bold, italic),
-  ("Technology", "-Regular", normal, normal) {
-    @font-face {
-      font-family: $family;
-      src: url("../fonts/Technology#{$suffix}.woff2") format("woff2");
-      font-weight: $weight;
-      font-style: $style;
-      font-display: swap;
-    }
+  ("Technology", "-Regular", normal, normal)
+{
+  @font-face {
+    font-family: $family;
+    src: url("../fonts/Technology#{$suffix}.woff2") format("woff2");
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
 }
+@font-face {
+    font-family: 'alarm clock';
+    src: url('../fonts/alarmclock.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+$digital: 'alarm clock', sans-serif;
 
 html,
 body {
   width: 100%;
   height: 100%;
 }
-
 
 @mixin label {
   padding: 0 7px 2px 7px;
@@ -33,10 +41,14 @@ body {
   font-variant: small-caps;
 }
 @mixin led-gradient($on) {
-  $color1: if(sass($on): rgb(255, 255, 0); else: rgb(47, 47, 0));
-  $color2: if(sass($on): rgb(40, 30, 0); else: black);
+  $color1: if(
+    sass($on): rgb(255, 255, 0) ; else: rgb(47, 47, 0),
+  );
+  $color2: if(
+    sass($on): rgb(40, 30, 0) ; else: black,
+  );
   background:
-    radial-gradient(at 70% 30%, rgba(255,255,255,0.3), transparent 20%),
+    radial-gradient(at 70% 30%, rgba(255, 255, 255, 0.3), transparent 20%),
     radial-gradient($color1, $color2);
 }
 @keyframes clock {
@@ -77,11 +89,10 @@ body {
       display: flex;
       justify-content: space-between;
       .box {
-        font: 60px "Technology", sans-serif;
+        font: 60px $digital;
         border-radius: 2px;
         background: rgb(9, 9, 9);
-        color: white;
-        padding: 10px 3px 0px 6px;
+        padding: 3px 3px 0px 6px;
         line-height: 40px;
         flex: 1 1;
         margin: 0 10px;
@@ -91,13 +102,34 @@ body {
         &::after {
           @include label();
           content: var(--name);
-          font: 15px/13px "Arial", sans-serif;
+          font:
+            15px/13px "Arial",
+            sans-serif;
           font-variant: small-caps;
           position: absolute;
           left: 50%;
           top: -5px;
           transform: translate(-50%, -100%);
           padding: 0 7px 2px 7px;
+        }
+        span {
+          transform: skew(-5deg);
+          color: rgba(255, 255, 255, 0.226);
+          display: block;
+          position: relative;
+          z-index: 2;
+          line-height: 48px;
+          &::after {
+            content: var(--value);
+            color: transparent;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            background-clip: text;
+          }
         }
       }
       .ampm {
@@ -125,7 +157,7 @@ body {
             padding: 0 2px;
           }
           &.on {
-            @include led-gradient(true)
+            @include led-gradient(true);
           }
         }
         .pm {
@@ -164,11 +196,31 @@ body {
       width: fit-content;
       margin-top: 5px;
       padding: 0 8px 2px 8px;
-      font: 15px / 16px "Arial", sans-serif;
+      font:
+        15px / 16px "Arial",
+        sans-serif;
       font-variant: small-caps;
       text-transform: lowercase;
       box-shadow: 1px -1px 0.6px rgb(42, 42, 42) inset;
       border-radius: 1px;
+    }
+    &.going .boxes .box span::after {
+      background-image: radial-gradient(
+        rgba(255, 136, 0, 0.9),
+        rgba(255, 123, 0, 0.8)
+      );
+    }
+    &.are .boxes .box span::after {
+      background-image: radial-gradient(
+        rgba(179, 255, 0, 0.9),
+        rgba(0, 255, 42, 0.8)
+      );
+    }
+    &.been .boxes .box span::after {
+      background-image: radial-gradient(
+        rgba(255, 187, 0, 0.9),
+        rgba(255, 166, 0, 0.8)
+      );
     }
   }
 }

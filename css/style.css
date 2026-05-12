@@ -33,6 +33,13 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "alarm clock";
+  src: url("../fonts/alarmclock.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 html,
 body {
   width: 100%;
@@ -75,11 +82,10 @@ body {
   justify-content: space-between;
 }
 #time_machine .circuit .boxes .box {
-  font: 60px "Technology", sans-serif;
+  font: 60px "alarm clock", sans-serif;
   border-radius: 2px;
   background: rgb(9, 9, 9);
-  color: white;
-  padding: 10px 3px 0px 6px;
+  padding: 3px 3px 0px 6px;
   line-height: 40px;
   flex: 1 1;
   margin: 0 10px;
@@ -104,6 +110,26 @@ body {
   top: -5px;
   transform: translate(-50%, -100%);
   padding: 0 7px 2px 7px;
+}
+#time_machine .circuit .boxes .box span {
+  transform: skew(-5deg);
+  color: rgba(255, 255, 255, 0.226);
+  display: block;
+  position: relative;
+  z-index: 2;
+  line-height: 48px;
+}
+#time_machine .circuit .boxes .box span::after {
+  content: var(--value);
+  color: transparent;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  -webkit-background-clip: text;
+          background-clip: text;
 }
 #time_machine .circuit .boxes .ampm {
   min-width: 25px;
@@ -182,4 +208,13 @@ body {
   text-transform: lowercase;
   box-shadow: 1px -1px 0.6px rgb(42, 42, 42) inset;
   border-radius: 1px;
+}
+#time_machine .circuit.going .boxes .box span::after {
+  background-image: radial-gradient(rgba(255, 136, 0, 0.9), rgba(255, 123, 0, 0.8));
+}
+#time_machine .circuit.are .boxes .box span::after {
+  background-image: radial-gradient(rgba(179, 255, 0, 0.9), rgba(0, 255, 42, 0.8));
+}
+#time_machine .circuit.been .boxes .box span::after {
+  background-image: radial-gradient(rgba(255, 187, 0, 0.9), rgba(255, 166, 0, 0.8));
 }/*# sourceMappingURL=style.css.map */

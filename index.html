@@ -31,30 +31,40 @@
     <script type="text/x-template" id="time_machine_template">
       <!--template-->
       <div id="time_machine">
-        <circuit></circuit>
-        <circuit></circuit>
-        <circuit></circuit>
+        <circuit :section="1" :mm="5" :dd="12" :yyyy="2026" :hr="31" :min="24"></circuit>
+        <circuit :section="0"></circuit>
+        <circuit :section="-1"></circuit>
       </div>
       <!--template-->
     </script>
     <script type="text/x-template" id="circuit_template">
-            <div class="circuit">
-              <div class="boxes">
-                <div id="month" class="box" style="--name: 'month'">{{mm}}</div>
-                <div id="day" class="box" style="--name: 'day'">{{dd}}</div>
-                <div id="year" class="box" style="--name: 'year'">{{yyyy}}</div>
-                <div class="ampm">
-                  <div class="am" style="--label: 'am'"></div>
-                  <div class="pm on" style="--label: 'pm'"></div>
-                </div>
-                <div id="hour" class="box" style="--name: 'hour'">{{hr}}</div>
-                <div class="dots"></div>
-                <div id="min" class="box" style="--name: 'min'">{{min}}</div>
-              </div>
-              <div class="label">
-                {{name}}
-              </div>
-            </div>
+      <div class="circuit" :class="{'going': section === 1, 'are': section === 0, 'been': section === -1}">
+        <div class="boxes">
+          <div id="month" class="box" style="--name: 'month';">
+            <span :style="{'--value':  `'` + mm + `'`}">{{numbers(mm.length)}}</span>
+          </div>
+          <div id="day" class="box" style="--name: 'day';">
+            <span :style="{'--value': `'` + dd + `'`}">{{numbers(dd.length)}}</span>
+          </div>
+          <div id="year" class="box" style="--name: 'year';">
+            <span :style="{'--value': `'` + yyyy + `'`}">{{numbers(yyyy.length)}}</span>
+          </div>
+          <div class="ampm">
+            <div class="am" style="--label: 'am'" :class="{'on': !ampm}"></div>
+            <div class="pm" style="--label: 'pm'" :class="{'on': ampm}"></div>
+          </div>
+          <div id="hour" class="box" style="--name: 'hour';">
+            <span :style="{'--value':  `'` + hr + `'`}">{{numbers(hr.length)}}</span>
+          </div>
+          <div class="dots"></div>
+          <div id="min" class="box" style="--name: 'min';">
+            <span :style="{'--value':  `'` + min + `'`}">{{numbers(min.length)}}</span>
+          </div>
+        </div>
+        <div class="label">
+          {{label(section)}}
+        </div>
+      </div>
     </script>
   </body>
 </html>
