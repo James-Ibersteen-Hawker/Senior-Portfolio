@@ -40,10 +40,18 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "BTTF";
+  src: url("../fonts/BTTF.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 html,
 body {
   width: 100%;
   height: 100%;
+  background-color: black;
 }
 
 @keyframes clock {
@@ -217,4 +225,72 @@ body {
 }
 #time_machine .circuit.been .boxes .box span::after {
   background-image: radial-gradient(rgba(255, 187, 0, 0.9), rgba(255, 166, 0, 0.8));
+}
+
+.hero {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  height: calc(100vh - 80px);
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  background: url(../imgs/road.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+.hero .center {
+  max-height: 600px;
+  max-width: 600px;
+  background: linear-gradient(to bottom, rgba(44, 0, 167, 0.4)), url("../imgs/lightning.webp");
+  background-size: cover;
+  background-position: center;
+  border-radius: 100%;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: left;
+  overflow: visible;
+  padding: 20px;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(20px);
+  opacity: 0.6;
+  -webkit-mask-image: radial-gradient(white 60%, transparent 70% 80%, transparent);
+          mask-image: radial-gradient(white 60%, transparent 70% 80%, transparent);
+}
+.hero .center h2 {
+  font-size: 50px;
+  font-family: "BTTF", sans-serif;
+  color: transparent;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-background-clip: text;
+          background-clip: text;
+  background-image: radial-gradient(orange, rgb(255, 217, 0));
+  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.5));
+}
+.hero .bus {
+  background: url(../imgs/bus.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  bottom: 35%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  z-index: 3;
+}
+
+.footer {
+  border-top: 1px solid rgba(55, 0, 255, 0.418);
+  width: 100%;
+  height: 80px;
+  background: gray;
 }/*# sourceMappingURL=style.css.map */
