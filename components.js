@@ -53,11 +53,11 @@ const circuits = {
             if (num.toString().length < length) return `${"0".repeat(length - num.toString().length)}${num}`
             else return num.toString();
         }
-        const mm = computed(() => months[props.mm]);
-        const dd = computed(() => props.dd.toString());
-        const yyyy = computed(() => props.yyyy.toString());
-        const hr = computed(() => zero(2, props.hr % 24));
-        const min = computed(() => zero(2, props.min % 60));
+        const mm = computed(() => `'${months[props.mm - 1]}'`);
+        const dd = computed(() => `'${props.dd.toString()}'`);
+        const yyyy = computed(() => `'${props.yyyy.toString()}'`);
+        const hr = computed(() => `'${zero(2, props.hr % 24)}'`);
+        const min = computed(() => `'${zero(2, props.min % 60)}'`);
         const ampm = computed(() => props.hr >= 12 ? true : false);
         return { mm, dd, yyyy, hr, min, section: props.section, ampm, numbers, label }
     },
@@ -65,24 +65,24 @@ const circuits = {
     <div class="circuit" :class="{'going': section === 1, 'are': section === 0, 'been': section === -1}">
         <div class="boxes">
           <div id="month" class="box" style="--name: 'month';">
-            <span :style="{'--value':  ' + mm + '}">{{numbers(mm.length)}}</span>
+            <span :style="{'--value': mm}">{{numbers(mm.length - 2)}}</span>
           </div>
           <div id="day" class="box" style="--name: 'day';">
-            <span :style="{'--value': ' + dd + '}">{{numbers(dd.length)}}</span>
+            <span :style="{'--value': dd}">{{numbers(dd.length - 2)}}</span>
           </div>
           <div id="year" class="box" style="--name: 'year';">
-            <span :style="{'--value': ' + yyyy + '}">{{numbers(yyyy.length)}}</span>
+            <span :style="{'--value': yyyy}">{{numbers(yyyy.length - 2)}}</span>
           </div>
           <div class="ampm">
             <div class="am" style="--label: 'am'" :class="{'on': !ampm}"></div>
             <div class="pm" style="--label: 'pm'" :class="{'on': ampm}"></div>
           </div>
           <div id="hour" class="box" style="--name: 'hour';">
-            <span :style="{'--value':  ' + hr + '}">{{numbers(hr.length)}}</span>
+            <span :style="{'--value':  hr}">{{numbers(hr.length - 2)}}</span>
           </div>
           <div class="dots"></div>
           <div id="min" class="box" style="--name: 'min';">
-            <span :style="{'--value':  ' + min + '}">{{numbers(min.length)}}</span>
+            <span :style="{'--value':  min}">{{numbers(min.length - 2)}}</span>
           </div>
         </div>
         <div class="label">
