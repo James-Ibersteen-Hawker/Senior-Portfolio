@@ -24,12 +24,21 @@
         <h2 class="bottom">WEB DESIGNER<</h2>
       </div>
     </div>
-    <footer class="footer" id="vue_app"></footer>
+    <footer class="footer" id="vue_app">
+      <time-machine></time-machine>
+    </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
     <script type="module" src="script.js"></script>
+    <script type="text/x-template" id="time_machine_template">
+      <!--template-->
+      <div id="time_machine">
+        <circuit :section="1" :mm="5" :dd="12" :yyyy="2026" :hr="31" :min="24"></circuit>
+      </div>
+      <!--template-->
+    </script>
   </body>
 </html>

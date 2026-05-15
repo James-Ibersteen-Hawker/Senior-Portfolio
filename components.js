@@ -1,3 +1,4 @@
+import { computed } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
 export const months = [
     "JAN",
     "FEB",
@@ -52,19 +53,43 @@ const circuits = {
             if (num.toString().length < length) return `${"0".repeat(length - num.toString().length)}${num}`
             else return num.toString();
         }
-        return {
-            mm: months[props.mm],
-            dd: props.dd.toString(),
-            yyyy: props.yyyy.toString(),
-            hr: zero(2, props.hr % 24),
-            min: zero(2, props.min % 60),
-            section: props.section,
-            ampm: props.hr >= 12 ? true : false,
-            numbers,
-            label,
-        }
+        const mm = computed(() => months[props.mm]);
+        const dd = computed(() => props.dd.toString());
+        const yyyy = computed(() => props.yyyy.toString());
+        const hr = computed(() => zero(2, props.hr % 24));
+        const min = computed(() => zero(2, props.min % 60));
+        const ampm = computed(() => props.hr >= 12 ? true : false);
+        return { mm, dd, yyyy, hr, min, section: props.section, ampm, numbers, label }
     },
-    template: `#circuit_template`
+    template: `
+    <div class="circuit" :class="{'going': section === 1, 'are': section === 0, 'been': section === -1}">
+        <div class="boxes">
+          <div id="month" class="box" style="--name: 'month';">
+            <span :style="{'--value':  ' + mm + '}">{{numbers(mm.length)}}</span>
+          </div>
+          <div id="day" class="box" style="--name: 'day';">
+            <span :style="{'--value': ' + dd + '}">{{numbers(dd.length)}}</span>
+          </div>
+          <div id="year" class="box" style="--name: 'year';">
+            <span :style="{'--value': ' + yyyy + '}">{{numbers(yyyy.length)}}</span>
+          </div>
+          <div class="ampm">
+            <div class="am" style="--label: 'am'" :class="{'on': !ampm}"></div>
+            <div class="pm" style="--label: 'pm'" :class="{'on': ampm}"></div>
+          </div>
+          <div id="hour" class="box" style="--name: 'hour';">
+            <span :style="{'--value':  ' + hr + '}">{{numbers(hr.length)}}</span>
+          </div>
+          <div class="dots"></div>
+          <div id="min" class="box" style="--name: 'min';">
+            <span :style="{'--value':  ' + min + '}">{{numbers(min.length)}}</span>
+          </div>
+        </div>
+        <div class="label">
+          {{label(section)}}
+        </div>
+      </div>
+    `
 }
 export const timeMachine = {
     props: {},
