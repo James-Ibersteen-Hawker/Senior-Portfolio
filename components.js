@@ -39,7 +39,7 @@ const circuits = {
     props: {
         section: {type: String, default: "been"},
         mm: {type: Number, default: 0},
-        dd: {type: String, default: "01"},
+        dd: {type: Number, default: "1"},
         yyyy: {type: String, default: "0000"},
         hr: {type: Number, default: 0},
         min: {type: Number, default: 0},
@@ -54,7 +54,7 @@ const circuits = {
             else return num.toString();
         }
         const mm = computed(() => `'${months[props.mm - 1]}'`);
-        const dd = computed(() => `'${props.dd.toString()}'`);
+        const dd = computed(() => `'${zero(2, props.dd)}'`);
         const yyyy = computed(() => `'${props.yyyy.toString()}'`);
         const hr = computed(() => `'${zero(2, props.hr % 24)}'`);
         const min = computed(() => `'${zero(2, props.min % 60)}'`);
