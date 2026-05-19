@@ -438,9 +438,31 @@ body {
 .projects .skewed .project {
   background: white;
   margin: 20px;
-  height: 80px;
   transition: 0.5s;
   cursor: pointer;
+  display: flex;
+}
+.projects .skewed .project .iframe, .projects .skewed .project .about {
+  display: block;
+  height: 100%;
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+}
+.projects .skewed .project .about {
+  width: 60%;
+}
+.projects .skewed .project .iframe {
+  width: 40%;
+}
+.projects .skewed .project .iframe iframe {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  margin-bottom: -7px !important;
 }
 .projects .skewed .project:hover {
   transform: scaleY(130%) perspective(2000px) rotateX(35deg);

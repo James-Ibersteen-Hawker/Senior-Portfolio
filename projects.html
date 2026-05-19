@@ -26,18 +26,11 @@
       <div class="control">control</div>
       <div class="projects">
         <div class="skewed">
-          <div class="project">text</div>
-          <div class="project">text</div>
-          <div class="project">text</div>
-          <div class="project">text</div>
-          <div class="project">text</div>
-          <div class="project">text</div>
-          <div class="project">text</div>
-          <div class="project">text</div>
-          <div class="project">text</div>
-          <div class="project">text</div>
-          <div class="project">text</div>
-
+          <project name="Test" link="https://www.dafont.com" description="lorem ipsum"></project>
+          <project name="Test" link="https://www.dafont.com" description="lorem ipsum"></project>
+          <project name="Test" link="https://www.dafont.com" description="lorem ipsum"></project>
+          <project name="Test" link="https://www.dafont.com" description="lorem ipsum"></project>
+          <project name="Test" link="https://www.dafont.com" description="lorem ipsum"></project>
         </div>
       </div>
     </main>
@@ -46,7 +39,6 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="script.js"></script>
     <script type="text/x-template" id="time_machine_template">
       <!--template-->
       <div id="time_machine">
@@ -56,5 +48,19 @@
       </div>
       <!--template-->
     </script>
+    <script type="text/x-template" id="project_item">
+      <div class="project">
+        <div class="iframe">
+          <a :href="link" target="_blank">
+            <iframe :src="link" :title="name"></iframe>
+          </a>
+        </div>
+        <div class="about">
+          <h2 class="title">{{name}}</h2>
+          <div class="description">{{description}}</div>
+        </div>
+      </div>
+    </script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>

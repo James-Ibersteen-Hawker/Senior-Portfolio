@@ -96,18 +96,30 @@ export const timeMachine = {
   emits: [],
   setup(props, { emit }) {
     const num = ref(0);
-    let upInterval;
+    const upInterval = ref(null);
     const speed = computed(() => `${zero(2, num.value)}`)
     function up() {
-      upInterval = setInterval(() => {
+      upInterval.value = setInterval(() => {
         if (num.value < 88) num.value++;
-        else clearInterval(upInterval);
+        else clearInterval(upInterval.value);
       }, 100);
     }
-    return { up, speed: speed, num }
+    return { up, speed, num, upInterval }
   },
-  template: document.getElementById('time_machine_template').innerHTML,
+  template: '#time_machine_template',
   components: {
     'circuit': circuits
   }
+}
+export const project = {
+  props: {
+    name: {type: String, required: true},
+    link: {type: String, required: true},
+    description: {type: String, default: ""}
+  },
+  emits: [],
+  setup(props, {emit}) {
+    
+  },
+  template: "#project_item"
 }
