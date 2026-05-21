@@ -338,7 +338,8 @@ body {
 }
 .footer .speedometer {
   box-shadow: 0px 0px 5px black;
-  margin-top: 5px;
+  margin-top: 20px;
+  margin-bottom: 5px;
   background: linear-gradient(to right, rgb(206, 190, 169) 0 97%, rgb(245, 235, 221));
   padding: 0px 40px 8px 40px;
   border-radius: 5px;
@@ -384,9 +385,23 @@ body {
   text-align: left;
   filter: drop-shadow(0px 0px 2px red) drop-shadow(0px 0px 3px red);
 }
-.footer .speedometer .off a {
+.footer .speedometer.off a {
   pointer-events: none;
   cursor: default;
+}
+.footer .speedometer .buttons {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translate(-50%, -50%);
+  background-color: rgb(31, 31, 31);
+  color: white;
+  font-variant: small-caps;
+  line-height: 18px;
+  font-size: 20px;
+  padding-bottom: 5px;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 @media screen and (max-width: 1630px) {

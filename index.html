@@ -37,6 +37,9 @@
       <div id="time_machine">
         <circuit :section="-1" :mm="9" :dd="7" :yyyy="2023" :hr="8" :min="24"></circuit>
         <div class="speedometer" @mouseenter="up" @mouseleave="stop" :class="{'off': !active}">
+          <div class="buttons">
+            to
+          </div>
         <a href="./projects.html" target="_self">
           <div class="intothebutton">
             <span>{{speed}}.&nbsp;</span>
