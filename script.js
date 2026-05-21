@@ -1,12 +1,18 @@
-import { createApp, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.prod.js'
+import { createApp, ref, computed, reactive } from './central.js'
 import { timeMachine, project } from './components.js';
-import Fuse from 'https://cdn.jsdelivr.net/npm/fuse.js@7.3.0/+esm'
+import { Fuse } from './central.js'
 
 const App = createApp({
-    async setup() {
-        const json = await (await fetch("./projects.json")).json()
+    setup() {
+        const data = reactive({ json: null })
+        fetch("./projects.json")
+            .then(data => data.json())
+            .then(json => data.json = json)
+            .catch(e => {
+                throw new Error(e)
+            })
         return {
-            json
+            data
         }
     }
 })

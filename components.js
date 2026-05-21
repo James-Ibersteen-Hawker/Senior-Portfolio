@@ -1,4 +1,6 @@
-import { computed, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+import { createApp, ref, computed } from './central.js'
+import { Fuse } from './central.js'
+
 export const months = [
   "JAN",
   "FEB",
@@ -98,13 +100,24 @@ export const timeMachine = {
     const num = ref(0);
     const upInterval = ref(null);
     const speed = computed(() => `${zero(2, num.value)}`)
+    const active = ref(false);
     function up() {
+      clearInterval(upInterval.value)
       upInterval.value = setInterval(() => {
         if (num.value < 88) num.value++;
         else clearInterval(upInterval.value);
+        if (num.value === 88) active.value = true;
+        else active.value = false;
       }, 100);
     }
-    return { up, speed, num, upInterval }
+    function stop() {
+      clearInterval(upInterval.value);
+      upInterval.value = setInterval(() => {
+        if (num.value > 0) num.value--;
+        else clearInterval(upInterval.value);
+      }, 250);
+    }
+    return { up, stop, speed, num, upInterval, active }
   },
   template: '#time_machine_template',
   components: {

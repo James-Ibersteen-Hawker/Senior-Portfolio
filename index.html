@@ -36,11 +36,13 @@
       <!--template-->
       <div id="time_machine">
         <circuit :section="-1" :mm="9" :dd="7" :yyyy="2023" :hr="8" :min="24"></circuit>
-        <a href="./projects.html" target="_self" @mouseenter="up">
+        <div class="speedometer" @mouseenter="up" @mouseleave="stop" :class="{'off': !active}">
+        <a href="./projects.html" target="_self">
           <div class="intothebutton">
-            <span>{{speed}}.</span>
+            <span>{{speed}}.&nbsp;</span>
           </div>
         </a>
+      </div>
         <circuit :section="1" :mm="5" :dd="15" :yyyy="2026" :hr="12" :min="00"></circuit>
       </div>
       <!--template-->
