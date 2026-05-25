@@ -26,11 +26,12 @@
       <div class="control">control</div>
       <div class="projects">
         <div class="skewed">
-          <project name="Test" link="https://www.dafont.com" description="lorem ipsum"></project>
-          <project name="Test" link="https://www.dafont.com" description="lorem ipsum"></project>
-          <project name="Test" link="https://www.dafont.com" description="lorem ipsum"></project>
-          <project name="Test" link="https://www.dafont.com" description="lorem ipsum"></project>
-          <project name="Test" link="https://www.dafont.com" description="lorem ipsum"></project>
+          <project
+            v-for="item in data.json"
+            :name="item.name"
+            :link="item.link"
+            description="lorem ipsum"
+            loading="lazy"></project>
         </div>
       </div>
     </main>
