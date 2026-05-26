@@ -15,6 +15,12 @@
       defer
       src="https://unpkg.com/vue@3.0.11/dist/vue.global.prod.js"
     ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
@@ -30,8 +36,9 @@
             v-for="item in data.json"
             :name="item.name"
             :link="item.link"
-            description="lorem ipsum"
-            loading="lazy"></project>
+            :description="item.description"
+            loading="lazy"
+          ></project>
         </div>
       </div>
     </main>
@@ -51,11 +58,14 @@
     </script>
     <script type="text/x-template" id="project_item">
       <div class="project">
-        <div class="iframe">
-          <a :href="link" target="_blank">
-            <iframe :src="link" :title="name"></iframe>
-          </a>
+        <div class="time">
         </div>
+          <a :href="link" target="_blank">
+            <div class="iframe">
+              <iframe :src="link" :title="name" width="400px" height="100%"
+                sandbox="allow-scripts allow-same-origin">></iframe>
+            </div>
+          </a>
         <div class="about">
           <h2 class="title">{{name}}</h2>
           <div class="description">{{description}}</div>

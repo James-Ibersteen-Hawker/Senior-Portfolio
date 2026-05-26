@@ -128,7 +128,8 @@ export const project = {
   props: {
     name: {type: String, required: true},
     link: {type: String, required: true},
-    description: {type: String, default: ""}
+    description: {type: String, default: ""},
+    time: {type: Array, default: () => []}
   },
   emits: [],
   setup(props, {emit}) {
