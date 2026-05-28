@@ -43,7 +43,11 @@
         "name": "Prohibition Essay",
         "link": "https://james-ibersteen-hawker.github.io/Sophomore-dump/Prohibition-Paper/index.html",
         "description": "An essay for English 2, built as a website.",
-        "creationdate": []
+        "creationdate": [
+            1,
+            22,
+            2024
+        ]
     },
     {
         "name": "The Solar System",
@@ -397,7 +401,7 @@
     },
     {
         "name": "Battleship",
-        "link": "...",
+        "link": "",
         "description": "A single-player battleship game.",
         "creationdate": []
     },
