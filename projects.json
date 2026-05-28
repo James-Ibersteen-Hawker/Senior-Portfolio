@@ -424,7 +424,7 @@
     {
         "name": "Let's Go Camping",
         "link": "",
-        "description": "",
+        "description": "A website about going camping!",
         "creationdate": [
             10,
             3,
@@ -434,7 +434,7 @@
     {
         "name": "An Epic Guide to Epic Quests",
         "link": "",
-        "description": "",
+        "description": "A website instructing noble adventurers about how to best go about their adventures.",
         "creationdate": [
             11,
             1,
@@ -444,7 +444,7 @@
     {
         "name": "Chess Board",
         "link": "",
-        "description": "",
+        "description": "A project to demonstrate HTML tables.",
         "creationdate": [
             10,
             5,
@@ -454,7 +454,7 @@
     {
         "name": "Halloween Movie",
         "link": "",
-        "description": "",
+        "description": "The sophomore Halloween website, about movie recommendations.",
         "creationdate": [
             10,
             19,
@@ -464,7 +464,7 @@
     {
         "name": "Nav Bar",
         "link": "",
-        "description": "",
+        "description": "My first nav bar.",
         "creationdate": [
             10,
             25,
@@ -474,7 +474,7 @@
     {
         "name": "NJ Lighthouses",
         "link": "",
-        "description": "",
+        "description": "A website showcasing NJ lighthouses. Uses one of the first JS snippets I ever implemented.",
         "creationdate": [
             11,
             22,
@@ -484,7 +484,7 @@
     {
         "name": "Puppies",
         "link": "",
-        "description": "",
+        "description": "A bootstrap exercise with carousels.",
         "creationdate": [
             1,
             12,
@@ -494,7 +494,7 @@
     {
         "name": "Album Covers",
         "link": "",
-        "description": "",
+        "description": "A CSS exercise with Album Covers.",
         "creationdate": [
             4,
             15,
@@ -504,7 +504,7 @@
     {
         "name": "Sloan Kettering Cancer Initiative",
         "link": "",
-        "description": "",
+        "description": "A brochure style website for MSK Cancer Disparities Initiative.",
         "creationdate": [
             5,
             24,
@@ -514,7 +514,7 @@
     {
         "name": "MLK Tribute",
         "link": "",
-        "description": "",
+        "description": "A carousel tribute page to MLK Jr.",
         "creationdate": [
             1,
             23,
