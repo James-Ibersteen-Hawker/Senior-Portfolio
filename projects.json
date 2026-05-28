@@ -23,13 +23,21 @@
         "name": "Tromso Vacation Website",
         "link": "https://james-ibersteen-hawker.github.io/Sophomore-dump/TromsoVacation/index.html",
         "description": "A website built for Tromso in Norway, as a destination site.",
-        "creationdate": [3, 27, 2024]
+        "creationdate": [
+            3,
+            27,
+            2024
+        ]
     },
     {
         "name": "Perfect Pumpkin Pie",
         "link": "https://james-ibersteen-hawker.github.io/Sophomore-dump/PerfectPumpkin365/index.html",
         "description": "A recipe for the perfect Pumkpin Pie.",
-        "creationdate": [10, 12, 2023]
+        "creationdate": [
+            10,
+            12,
+            2023
+        ]
     },
     {
         "name": "Prohibition Essay",
@@ -41,211 +49,351 @@
         "name": "The Solar System",
         "link": "https://james-ibersteen-hawker.github.io/Sophomore-dump/The-Solar-System-For-Kids/index.html",
         "description": "A guide to the solar system",
-        "creationdate": [9, 28, 2023]
+        "creationdate": [
+            9,
+            28,
+            2023
+        ]
     },
     {
         "name": "TCA1 WDPP SG",
         "link": "https://james-ibersteen-hawker.github.io/Sophomore-dump/TCA1WDPPSG/index.html",
         "description": "A study guide for the TCA 1 of Honors Web Design.",
-        "creationdate": [11, 7, 2023]
+        "creationdate": [
+            11,
+            7,
+            2023
+        ]
     },
     {
         "name": "Kelly Johnson Tribute",
         "link": "https://james-ibersteen-hawker.github.io/Sophomore-dump/Kelly-Johnson-Tribute/index.html",
         "description": "A tribute website for Kelly Johnson of Lockheed Martin",
-        "creationdate": [2, 21, 2024]
+        "creationdate": [
+            2,
+            21,
+            2024
+        ]
     },
     {
         "name": "How to Embed",
         "link": "https://james-ibersteen-hawker.github.io/Sophomore-dump/Google-maps/index.html",
         "description": "A website designed to help explain how to embed videos and maps.",
-        "creationdate": []
+        "creationdate": [
+            3,
+            30,
+            2024
+        ]
     },
     {
         "name": "Falling Seasons",
         "link": "https://james-ibersteen-hawker.github.io/Sophomore-dump/Falling-Seasons/index.html",
         "description": "A website showcasing CSS animations of seasonal artefacts.",
-        "creationdate": [11, 28, 2023]
+        "creationdate": [
+            11,
+            28,
+            2023
+        ]
     },
     {
         "name": "Chemistry Study Guide",
         "link": "https://james-ibersteen-hawker.github.io/Sophomore-dump/Chemistry-Study-Guide-v01/index.html",
         "description": "A chemistry study guide to the first ten elements.",
-        "creationdate": [12, 21, 2023]
+        "creationdate": [
+            12,
+            21,
+            2023
+        ]
     },
     {
         "name": "Dracula's Castle",
         "link": "https://james-ibersteen-hawker.github.io/Sophomore-dump/Draculas-Castle/index.html",
         "description": "A click-through 'game' built early on.",
-        "creationdate": []
+        "creationdate": [
+            10,
+            22,
+            2023
+        ]
     },
     {
         "name": "Sophomore Portfolio",
         "link": "https://james-ibersteen-hawker.github.io/Sophomore-dump/portfolio/index.html",
         "description": "My portfolio of sophomore year, and it also contains several photographs.",
-        "creationdate": []
+        "creationdate": [
+            11,
+            6,
+            2023
+        ]
     },
     {
         "name": "Marlboro Farmer's Market",
         "link": "https://james-ibersteen-hawker.github.io/Sophomore-dump/farmersmarket/index.html",
         "description": "A redesigned brochure website for the Marlboro Farmers' Market",
-        "creationdate": []
+        "creationdate": [
+            3,
+            8,
+            2024
+        ]
     },
     {
         "name": "My First Bootstrap",
         "link": "https://james-ibersteen-hawker.github.io/Sophomore-dump/MyFirstBootstrapRSerbinenko/index.html",
         "description": "My first webpage using Bootstrap, an HTML / CSS framework.",
-        "creationdate": []
+        "creationdate": [
+            1,
+            3,
+            2024
+        ]
     },
     {
         "name": "Music and Art Academy",
         "link": "https://james-ibersteen-hawker.github.io/maacademy-WBLP/",
         "description": "A redesigned website for the Music and Art Academy. Built as the Work Based Learning Project.",
-        "creationdate": [3, 10, 2026]
+        "creationdate": [
+            3,
+            10,
+            2026
+        ]
     },
     {
         "name": "Weekly News Site",
         "link": "https://james-ibersteen-hawker.github.io/WeeklyNewsSite/",
         "description": "A website built to aid the delivery of weekly updates through Marlboro High School.",
-        "creationdate": [1, 16, 2026]
+        "creationdate": [
+            1,
+            16,
+            2026
+        ]
     },
     {
         "name": "TXT-DRIVER.exe",
         "link": "https://james-ibersteen-hawker.github.io/TXT-DRIVER/",
         "description": "An entirely ASCII-based game, a dodgem-cars style retro game.",
-        "creationdate": [7, 2, 2025]
+        "creationdate": [
+            7,
+            2,
+            2025
+        ]
     },
     {
         "name": "Team Roster",
         "link": "https://james-ibersteen-hawker.github.io/Team-Roster-Website/",
         "description": "A website showcasing the major Star Wars characters as a roster.",
-        "creationdate": [5, 13, 2025]
+        "creationdate": [
+            5,
+            13,
+            2025
+        ]
     },
     {
         "name": "Text Pong",
         "link": "https://james-ibersteen-hawker.github.io/Text-Pong/",
         "description": "A retro Pong-style game built with ASCII characters.",
-        "creationdate": [5, 8, 2025]
+        "creationdate": [
+            5,
+            8,
+            2025
+        ]
     },
     {
         "name": "RIT College Website",
         "link": "https://james-ibersteen-hawker.github.io/RIT/",
         "description": "A senior college-assistance website guide to RIT.",
-        "creationdate": [9, 9, 2025]
+        "creationdate": [
+            9,
+            9,
+            2025
+        ]
     },
     {
         "name": "Dreidel Website",
         "link": "https://james-ibersteen-hawker.github.io/dreidelSpin/",
         "description": "A holiday website which spins the dreidel.",
-        "creationdate": [12, 16, 2026]
+        "creationdate": [
+            12,
+            16,
+            2026
+        ]
     },
     {
         "name": "NJIT jQuery Project",
         "link": "https://james-ibersteen-hawker.github.io/NJIT_prog1/",
         "description": "A carousel of tanks, styled in retro with jQuery.",
-        "creationdate": [11, 4, 2025]
+        "creationdate": [
+            11,
+            4,
+            2025
+        ]
     },
     {
         "name": "Senior Portfolio",
         "link": "https://james-ibersteen-hawker.github.io/Senior-Portfolio/",
         "description": "WEB-CEPTION!",
-        "creationdate": [5,5,2026]
+        "creationdate": [
+            5,
+            5,
+            2026
+        ]
     },
     {
         "name": "NJIT Check Movies",
         "link": "https://james-ibersteen-hawker.github.io/NJIT_prog2_movies/",
         "description": "A NJIT assignment to build a movie list.",
-        "creationdate": [12, 1, 2025]
+        "creationdate": [
+            12,
+            1,
+            2025
+        ]
     },
     {
         "name": "Little Bird Toy Company",
         "link": "https://zooch-btw.github.io/FINAL-PROJECT/",
         "description": "The final assessment for Junior year",
-        "creationdate": [6, 4, 2025]
+        "creationdate": [
+            6,
+            4,
+            2025
+        ]
     },
     {
         "name": "Wildcard Website",
         "link": "https://james-ibersteen-hawker.github.io/WildCard-Website/",
         "description": "A stack calculator displayed in ASCII, as my first ASCII interface.",
-        "creationdate": [4, 8, 2025]
+        "creationdate": [
+            4,
+            8,
+            2025
+        ]
     },
     {
         "name": "Hangman",
         "link": "https://james-ibersteen-hawker.github.io/hangmanSite/",
         "description": "A shamrock-themed hangman game.",
-        "creationdate": [3, 20, 2025]
+        "creationdate": [
+            3,
+            20,
+            2025
+        ]
     },
     {
         "name": "Monthly Website Gallery",
         "link": "https://james-ibersteen-hawker.github.io/monthlyWebsiteGallery/",
         "description": "My Junior year portfolio.",
-        "creationdate": [9, 30, 2024]
+        "creationdate": [
+            9,
+            30,
+            2024
+        ]
     },
     {
         "name": "Summer-tainment Site",
         "link": "https://james-ibersteen-hawker.github.io/Summer-tainment-Site/",
         "description": "My first Junior year website, designed to recap all of my summer activities.",
-        "creationdate": [9, 11, 2024]
+        "creationdate": [
+            9,
+            11,
+            2024
+        ]
     },
     {
         "name": "Look Ma, I'm Famous",
         "link": "https://james-ibersteen-hawker.github.io/LookMaImFamous/",
         "description": "A website about Graf Zeppelin.",
-        "creationdate": [10, 17, 2024]
+        "creationdate": [
+            10,
+            17,
+            2024
+        ]
     },
     {
         "name": "TCA1",
         "link": "https://james-ibersteen-hawker.github.io/TCA1/",
         "description": "A website of CSS animations for Junior Year TCA 1.",
-        "creationdate": [11, 1, 2024]
+        "creationdate": [
+            11,
+            1,
+            2024
+        ]
     },
     {
         "name": "Madlibs",
         "link": "https://james-ibersteen-hawker.github.io/MadLibs-Website/",
         "description": "A madlibs site with 4 stories.",
-        "creationdate": [11, 12, 2024]
+        "creationdate": [
+            11,
+            12,
+            2024
+        ]
     },
     {
         "name": "Name Generator",
         "link": "https://james-ibersteen-hawker.github.io/NameGenerator/",
         "description": "A medieval warrior name generator.",
-        "creationdate": [12, 10, 2024]
+        "creationdate": [
+            12,
+            10,
+            2024
+        ]
     },
     {
         "name": "Magic 8 Ball",
         "link": "https://james-ibersteen-hawker.github.io/Magic8Ball/",
         "description": "A magic 8 ball website.",
-        "creationdate": [11, 26, 2024]
+        "creationdate": [
+            11,
+            26,
+            2024
+        ]
     },
     {
         "name": "Rock Paper Scissors Matrix",
         "link": "https://james-ibersteen-hawker.github.io/RPSWebsite/",
         "description": "The Matrix-edition of Rock Paper Scissors. It is very computer-intensive.",
-        "creationdate": [1, 6, 2025]
+        "creationdate": [
+            1,
+            6,
+            2025
+        ]
     },
     {
         "name": "President Website",
         "link": "https://james-ibersteen-hawker.github.io/presidentSite/",
         "description": "A website about our former president, Calvin Coolidge.",
-        "creationdate": [2, 5, 2025]
+        "creationdate": [
+            2,
+            5,
+            2025
+        ]
     },
     {
         "name": "To Do List",
         "link": "https://james-ibersteen-hawker.github.io/toDoList/",
         "description": "A website to-do list.",
-        "creationdate": [2, 25, 2025]
+        "creationdate": [
+            2,
+            25,
+            2025
+        ]
     },
     {
         "name": "Reversi",
         "link": "https://james-ibersteen-hawker.github.io/Reversi/",
         "description": "A working 1 - 2 player game of Othello / Reversi.",
-        "creationdate": [9, 11, 2024]
+        "creationdate": [
+            9,
+            11,
+            2024
+        ]
     },
     {
         "name": "Schedules",
         "link": "https://james-ibersteen-hawker.github.io/ScheduleAsyncPractice/",
         "description": "A website to display school schedules.",
-        "creationdate": [10, 15, 2025]
+        "creationdate": [
+            10,
+            15,
+            2025
+        ]
     },
     {
         "name": "Battleship",
@@ -257,72 +405,120 @@
         "name": "KDTree Algorithm",
         "link": "https://github.com/James-Ibersteen-Hawker/KDTree",
         "description": "A work-in-progress numerical vector-search algorithm.",
-        "creationdate": [5, 15, 2026]
+        "creationdate": [
+            5,
+            15,
+            2026
+        ]
     },
     {
         "name": "Hello World",
         "link": "",
         "description": "My first website ever.",
-        "creationdate": [9, 22, 2023]
+        "creationdate": [
+            9,
+            22,
+            2023
+        ]
     },
     {
         "name": "Let's Go Camping",
         "link": "",
         "description": "",
-        "creationdate": [10, 3, 2023]
+        "creationdate": [
+            10,
+            3,
+            2023
+        ]
     },
     {
-        "name": "How To",
+        "name": "An Epic Guide to Epic Quests",
         "link": "",
         "description": "",
-        "creationdate": []
+        "creationdate": [
+            11,
+            1,
+            2023
+        ]
     },
     {
         "name": "Chess Board",
         "link": "",
         "description": "",
-        "creationdate": [10, 5, 2023]
+        "creationdate": [
+            10,
+            5,
+            2023
+        ]
     },
     {
         "name": "Halloween Movie",
         "link": "",
         "description": "",
-        "creationdate": [10, 19, 2023]
+        "creationdate": [
+            10,
+            19,
+            2023
+        ]
     },
     {
         "name": "Nav Bar",
         "link": "",
         "description": "",
-        "creationdate": []
+        "creationdate": [
+            10,
+            25,
+            2023
+        ]
     },
     {
         "name": "NJ Lighthouses",
         "link": "",
         "description": "",
-        "creationdate": []
+        "creationdate": [
+            11,
+            22,
+            2023
+        ]
     },
     {
         "name": "Puppies",
         "link": "",
         "description": "",
-        "creationdate": []
+        "creationdate": [
+            1,
+            12,
+            2024
+        ]
     },
     {
         "name": "Album Covers",
         "link": "",
         "description": "",
-        "creationdate": []
+        "creationdate": [
+            4,
+            15,
+            2024
+        ]
     },
     {
         "name": "Sloan Kettering Cancer Initiative",
         "link": "",
         "description": "",
-        "creationdate": []
+        "creationdate": [
+            5,
+            24,
+            2024
+        ]
     },
     {
         "name": "MLK Tribute",
         "link": "",
         "description": "",
-        "creationdate": []
+        "creationdate": [
+            1,
+            23,
+            2024
+        ]
     }
 ]
