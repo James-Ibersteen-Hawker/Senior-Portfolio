@@ -596,3 +596,13 @@ $iframe-width: 400px;
     mask-image: linear-gradient(to bottom, transparent, white);
   }
 }
+.p404 {
+  background: url(../imgs/BTTF404page.png);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  #controller404 {
+    width: fit-content;
+  }
+}

@@ -583,4 +583,16 @@ body {
   backdrop-filter: blur(10px);
   -webkit-mask-image: linear-gradient(to bottom, transparent, white);
           mask-image: linear-gradient(to bottom, transparent, white);
+}
+
+.p404 {
+  background: url(../imgs/BTTF404page.png);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.p404 #controller404 {
+  width: -moz-fit-content;
+  width: fit-content;
 }/*# sourceMappingURL=style.css.map */
