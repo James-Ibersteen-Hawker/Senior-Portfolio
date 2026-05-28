@@ -337,12 +337,16 @@ body {
     box-shadow: 0px 0px 5px black;
     margin-top: 20px;
     margin-bottom: 5px;
-    background: linear-gradient(to right, rgb(206, 190, 169) 0 97%, rgb(245, 235, 221));
+    background: linear-gradient(
+      to right,
+      rgb(206, 190, 169) 0 97%,
+      rgb(245, 235, 221)
+    );
     padding: 0px 40px 8px 40px;
     border-radius: 5px;
     position: relative;
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       width: 100%;
       height: 10px;
@@ -351,7 +355,9 @@ body {
       border-radius: 5px;
       box-shadow: 0px 1px 1px black;
       transform: translateY(calc(-100% - 1px));
-      background: linear-gradient(to top, transparent 0 40%, rgb(245, 235, 221) 80%), linear-gradient(to right, rgb(206, 190, 169) 0 97%,  rgb(245, 235, 221));
+      background:
+        linear-gradient(to top, transparent 0 40%, rgb(245, 235, 221) 80%),
+        linear-gradient(to right, rgb(206, 190, 169) 0 97%, rgb(245, 235, 221));
     }
     a {
       text-decoration: none;
@@ -401,11 +407,12 @@ body {
       padding-bottom: 1px;
       padding-left: 3px;
       padding-right: 3px;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-family:
+        "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
       box-shadow: 0px 0px 3px rgb(0, 0, 0) inset;
       border-radius: 2px;
       &::before {
-        content: 'set';
+        content: "set";
         position: absolute;
         top: 0;
         left: 50%;
@@ -417,7 +424,7 @@ body {
         font-family: inherit;
       }
       &::after {
-        content: '88';
+        content: "88";
         font-family: inherit;
         font-size: 15px;
         position: absolute;
@@ -501,6 +508,16 @@ body {
   height: 100px;
   background: brown;
 }
+@mixin overlay($z) {
+   content: "";
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    bottom: 0;
+    left: 0;
+    z-index: $z;
+    pointer-events: none;
+}
 $iframe-width: 400px;
 .projects {
   background: url(../imgs/road.jpeg);
@@ -508,18 +525,23 @@ $iframe-width: 400px;
   height: calc(100vh - 200px);
   overflow-y: hidden;
   position: relative;
+  perspective: 2000px;
+    isolation: isolate;
   .skewed {
+    overflow: {
+      y: auto;
+      x: hidden;
+    }
     margin-top: 20px;
-    height: 135.5vh;
-    overflow: auto;
-    overflow-x: hidden;
-    transform: perspective(2000px) rotateX(-40deg);
+    height: 135%;
+    transform: rotateX(-40deg);
     transform-origin: top center;
-    padding-bottom: 40%;
     -ms-overflow-style: none;
     scrollbar-width: none;
     .project {
-      background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../time-machine/gray-grime.png);
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+        url(../time-machine/gray-grime.png);
       background-size: cover;
       border: 5px outset black;
       box-shadow: 0px 0px 10px black;
@@ -528,18 +550,11 @@ $iframe-width: 400px;
       transition: 0.5s;
       cursor: pointer;
       display: flex;
-      a {
-        width: $iframe-width;
-        .iframe {
-          width: $iframe-width !important;
-          iframe {
-            pointer-events: none;
-            width: $iframe-width !important;
-            height: 100%;
-            margin-bottom: -6px;
-            overflow: hidden;
-          }
-        }
+      .iframe iframe {
+          pointer-events: none;
+          height: 100%;
+          margin-bottom: -6px;
+          overflow: hidden;
       }
       .time {
         width: 500px;
@@ -572,26 +587,12 @@ $iframe-width: 400px;
     }
   }
   &::after {
-    content: "";
-    z-index: 2;
-    position: absolute;
-    width: 100%;
-    height: 40%;
-    bottom: 0;
-    left: 0;
-    pointer-events: none;
+    @include overlay(2);
     background: linear-gradient(to bottom, transparent, rgb(1, 1, 122));
   }
   &::before {
-    content: "";
-    z-index: 1;
-    position: absolute;
-    width: 100%;
-    height: 40%;
-    bottom: 0;
-    left: 0;
-    pointer-events: none;
-    backdrop-filter: blur(10px) grayscale(50%);
+    @include overlay(1);
+    backdrop-filter: blur(10px);
     mask-image: linear-gradient(to bottom, transparent, white);
   }
 }

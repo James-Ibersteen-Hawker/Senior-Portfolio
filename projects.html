@@ -37,6 +37,7 @@
             :name="item.name"
             :link="item.link"
             :description="item.description"
+            :time="item.creationdate"
             loading="lazy"
           ></project>
         </div>
@@ -59,10 +60,11 @@
     <script type="text/x-template" id="project_item">
       <div class="project">
         <div class="time">
+          {{time}}
         </div>
-          <a :href="link" target="_blank">
+          <a :href="link || '404.html'" target="_blank">
             <div class="iframe">
-              <iframe :src="link" :title="name" width="400px" height="100%"
+              <iframe :src="link || '404.html'" :title="name" width="400px" height="100%"
                 sandbox="allow-scripts allow-same-origin">></iframe>
             </div>
           </a>

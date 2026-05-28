@@ -7,7 +7,13 @@ const App = createApp({
         const data = reactive({ json: null })
         fetch("./projects.json")
             .then(data => data.json())
-            .then(json => data.json = json)
+            .then(json => data.json = json.sort((a, b) => {
+                const [aM, aD, aY] = a.creationdate;
+                const [bM, bD, bY] = b.creationdate;
+                const aDate = new Date(aY, aM - 1, aD);
+                const bDate = new Date(bY, bM - 1, bD);
+                return aDate - bDate;
+            }))
             .catch(e => {
                 throw new Error(e)
             })

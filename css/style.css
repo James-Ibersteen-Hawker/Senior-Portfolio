@@ -502,15 +502,16 @@ body {
   height: calc(100vh - 200px);
   overflow-y: hidden;
   position: relative;
+  perspective: 2000px;
+  isolation: isolate;
 }
 .projects .skewed {
-  margin-top: 20px;
-  height: 135.5vh;
-  overflow: auto;
+  overflow-y: auto;
   overflow-x: hidden;
-  transform: perspective(2000px) rotateX(-40deg);
+  margin-top: 20px;
+  height: 135%;
+  transform: rotateX(-40deg);
   transform-origin: top center;
-  padding-bottom: 40%;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -525,15 +526,8 @@ body {
   cursor: pointer;
   display: flex;
 }
-.projects .skewed .project a {
-  width: 400px;
-}
-.projects .skewed .project a .iframe {
-  width: 400px !important;
-}
-.projects .skewed .project a .iframe iframe {
+.projects .skewed .project .iframe iframe {
   pointer-events: none;
-  width: 400px !important;
   height: 100%;
   margin-bottom: -6px;
   overflow: hidden;
@@ -568,25 +562,25 @@ body {
 }
 .projects::after {
   content: "";
-  z-index: 2;
   position: absolute;
   width: 100%;
   height: 40%;
   bottom: 0;
   left: 0;
+  z-index: 2;
   pointer-events: none;
   background: linear-gradient(to bottom, transparent, rgb(1, 1, 122));
 }
 .projects::before {
   content: "";
-  z-index: 1;
   position: absolute;
   width: 100%;
   height: 40%;
   bottom: 0;
   left: 0;
+  z-index: 1;
   pointer-events: none;
-  backdrop-filter: blur(10px) grayscale(50%);
+  backdrop-filter: blur(10px);
   -webkit-mask-image: linear-gradient(to bottom, transparent, white);
           mask-image: linear-gradient(to bottom, transparent, white);
 }/*# sourceMappingURL=style.css.map */
