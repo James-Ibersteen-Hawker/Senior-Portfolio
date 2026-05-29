@@ -57,7 +57,7 @@ const circuits = {
     const label = (time) => ["Destination Time", "Arrival Time", "Last Time Departed"].at(time)
     const mm = computed(() => `'${months[props.mm - 1]}'`);
     const dd = computed(() => `'${zero(2, props.dd)}'`);
-    const yyyy = computed(() => `'${props.yyyy.toString()}'`);
+    const yyyy = computed(() => `'${zero(4,props.yyyy).toString()}'`);
     const hr = computed(() => `'${zero(2, props.hr % 24)}'`);
     const min = computed(() => `'${zero(2, props.min % 60)}'`);
     const ampm = computed(() => props.hr >= 12 ? true : false);
@@ -137,7 +137,10 @@ export const project = {
   },
   emits: [],
   setup(props, {emit}) {
-    
+    const mm = computed(() => `'${months[props.time[0] - 1]}'`);
+    const dd = computed(() => `'${zero(2, props.time[1])}'`);
+    const yyyy = computed(() => `'${zero(4, props.time[2]).toString()}'`);
+    return { mm, dd, yyyy }
   },
   template: "#project_item"
 }

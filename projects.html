@@ -63,7 +63,15 @@
     <script type="text/x-template" id="project_item">
       <div class="project">
         <div class="time">
-          {{time}}
+          <div class="month display">
+            <span :style="{'--value': mm}">888</span>
+          </div>
+          <div class="day display">
+            <span :style="{'--value': dd}">88</span>
+          </div>
+          <div class="year display">
+            <span :style="{'--value': yyyy}">8888</span>
+          </div>
         </div>
           <a :href="link || '404.html'" target="_blank">
             <div class="iframe">
