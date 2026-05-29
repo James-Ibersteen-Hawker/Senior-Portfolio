@@ -29,17 +29,20 @@
       <div class="machine">
         <!-- <time-machine></time-machine> -->
       </div>
+      <div class="timeMachineOverlay">
+        <time-machine></time-machine>
+      </div>
       <div class="control">control</div>
       <div class="projects">
         <div class="skewed">
-          <project
+          <!-- <project
             v-for="item in data.json"
             :name="item.name"
             :link="item.link"
             :description="item.description"
             :time="item.creationdate"
             loading="lazy"
-          ></project>
+          ></project> -->
         </div>
       </div>
     </main>
@@ -51,9 +54,9 @@
     <script type="text/x-template" id="time_machine_template">
       <!--template-->
       <div id="time_machine">
-        <circuit :section="1" :mm="5" :dd="12" :yyyy="2026" :hr="31" :min="24"></circuit>
-        <circuit :section="0" :mm="5" :dd="12" :yyyy="2026" :hr="31" :min="24"></circuit>
-        <circuit :section="-1" :mm="5" :dd="12" :yyyy="2026" :hr="31" :min="24"></circuit>
+        <circuit :section="now[0]" :mm="now[1]" :dd="now[2]" :yyyy="now[3]" :hr="now[4]" :min="now[5]"></circuit>
+        <circuit :section="then[0]" :mm="5" :dd="12" :yyyy="2026" :hr="31" :min="24"></circuit>
+        <circuit :section="was[0]" :mm="5" :dd="12" :yyyy="2026" :hr="31" :min="24"></circuit>
       </div>
       <!--template-->
     </script>

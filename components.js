@@ -94,7 +94,11 @@ const circuits = {
     `
 }
 export const timeMachine = {
-  props: {},
+  props: {
+    now: {type: Array, default: () => [1, 1, 0, 0, 0, 0]},
+    then: {type: Array, default: () => [0, 0, 0, 0, 0, 0]},
+    was: {type: Array, default: () => [-1, 0, 0, 0, 0, 0]},
+  },
   emits: [],
   setup(props, { emit }) {
     const num = ref(0);

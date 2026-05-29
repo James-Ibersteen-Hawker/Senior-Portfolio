@@ -595,4 +595,24 @@ body {
 .p404 #controller404 {
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.timeMachineOverlay {
+  position: fixed;
+  z-index: 10000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+}
+.timeMachineOverlay::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to bottom, rgba(0, 0, 56, 0.8), rgba(0, 0, 14, 0.8));
+  z-index: -1;
 }/*# sourceMappingURL=style.css.map */
