@@ -491,14 +491,46 @@ body {
 }
 
 .control {
-  height: 100px;
-  background: brown;
+  height: 60px;
+  background: url(../time-machine/gray-grime.png);
+  background-size: cover;
+  background-position: center;
+  border-top: 3px solid rgb(172, 172, 172);
+  border-bottom: 3px solid rgb(78, 78, 78);
+  padding: 10px;
+}
+.control input {
+  width: calc(100% - 100px);
+  background: black;
+  color: rgba(255, 255, 0, 0.8);
+  font-family: "Courier New", Courier, monospace;
+  height: 30px;
+  margin: 0;
+  border: none !important;
+}
+.control input:focus {
+  outline: none;
+}
+.control input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+.control input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+.control label {
+  width: 100px;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "Courier New", Courier, monospace;
+  background-color: black;
+  height: 30px !important;
+  padding: 3px 0 0 10px;
+  position: relative;
 }
 
 .projects {
   background: url(../imgs/road.jpeg);
   background-size: 100% 100%;
-  height: calc(100vh - 200px);
+  height: calc(100vh - 160px);
   overflow-y: hidden;
   position: relative;
   perspective: 2000px;
@@ -562,27 +594,10 @@ body {
   height: 100%;
   left: 0;
   bottom: 0;
-  z-index: -1;
+  z-index: 2;
+  background-image: radial-gradient(rgba(255, 136, 0, 0.9), rgba(255, 123, 0, 0.8));
   -webkit-background-clip: text;
           background-clip: text;
-}
-.projects .skewed .project .time .display::after {
-  padding: 0 7px 2px 7px;
-  text-align: center;
-  background: rgba(255, 0, 0, 0.834);
-  border-radius: 1px;
-  box-shadow: 0px 0px 1px black inset;
-  color: whitesmoke;
-  text-transform: lowercase;
-  font-variant: small-caps;
-  content: var(--name);
-  font: 15px/13px "Arial", sans-serif;
-  font-variant: small-caps;
-  position: absolute;
-  left: 50%;
-  top: -5px;
-  transform: translate(-50%, -100%);
-  padding: 0 7px 2px 7px;
 }
 .projects .skewed .project .iframe iframe {
   pointer-events: none;
@@ -672,7 +687,7 @@ body {
   z-index: -1;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1200px) {
   .project {
     flex-direction: column;
   }

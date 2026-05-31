@@ -26,17 +26,17 @@
   <body>
     <main id="vue_app" class="portfolio_page">
       <div class="header">PROJECTS<</div>
-      <div class="machine">
-        <!-- <time-machine></time-machine> -->
-      </div>
       <!-- <div class="timeMachineOverlay">
         <time-machine></time-machine>
       </div> -->
-      <div class="control">control</div>
+      <div class="control">
+        <input type="text" v-model="query" placeholder="Configure Time Circuits..." id="search" name="search">
+        <label for="search">Search</label>
+      </div>
       <div class="projects">
         <div class="skewed">
           <project
-            v-for="item in data.json"
+            v-for="item in list"
             :name="item.name"
             :link="item.link"
             :description="item.description"

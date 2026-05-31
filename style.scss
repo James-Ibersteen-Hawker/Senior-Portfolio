@@ -507,8 +507,37 @@ body {
     0px 0px 6px white;
 }
 .control {
-  height: 100px;
-  background: brown;
+  height: 60px;
+  background: url(../time-machine/gray-grime.png);
+  background-size: cover;
+  background-position: center;
+  border-top: 3px solid rgb(172, 172, 172);
+  border-bottom: 3px solid rgb(78, 78, 78);
+  padding: 10px;
+  input {
+    width: calc(100%  - 100px);
+    background: black;
+    color: rgba(255, 255, 0, 0.8);
+    font-family: 'Courier New', Courier, monospace;
+    height: 30px;
+    margin: 0;
+    border: none !important;
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+  label {
+    width: 100px;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'Courier New', Courier, monospace;
+    background-color: black;
+    height: 30px !important;
+    padding: 3px 0 0 10px;
+    position: relative;
+  }
 }
 @mixin overlay($z) {
   content: "";
@@ -524,7 +553,7 @@ $iframe-width: 400px;
 .projects {
   background: url(../imgs/road.jpeg);
   background-size: 100% 100%;
-  height: calc(100vh - 200px);
+  height: calc(100vh - 160px);
   overflow-y: hidden;
   position: relative;
   perspective: 2000px;
@@ -585,22 +614,13 @@ $iframe-width: 400px;
               height: 100%;
               left: 0;
               bottom: 0;
-              z-index: -1;
+              z-index: 2;
+              background-image: radial-gradient(
+        rgba(255, 136, 0, 0.9),
+        rgba(255, 123, 0, 0.8)
+      );
               background-clip: text;
             }
-          }
-          &::after {
-            @include label();
-            content: var(--name);
-            font:
-              15px/13px "Arial",
-              sans-serif;
-            font-variant: small-caps;
-            position: absolute;
-            left: 50%;
-            top: -5px;
-            transform: translate(-50%, -100%);
-            padding: 0 7px 2px 7px;
           }
         }
       }
@@ -680,7 +700,7 @@ $iframe-width: 400px;
     z-index: -1;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1200px) {
   .project {
     flex-direction: column;
     .time, .iframe, .about {
