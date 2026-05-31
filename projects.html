@@ -26,23 +26,76 @@
   <body>
     <main id="vue_app" class="portfolio_page">
       <div class="header">PROJECTS<</div>
-      <!-- <div class="timeMachineOverlay">
-        <time-machine></time-machine>
-      </div> -->
+      <div class="timeMachineOverlay">
+        <time-machine :now="goTime" :then="now" :was="original"></time-machine>
+        <video id="timewarp"
+          disablepictureinpicture
+          disableremoteplayback
+          loading="eager"
+          muted
+          playsinline
+          preload
+        >
+          <source src="./time-machine/BTTF Time Transition.mp4" type="video/mp4"/>
+          Your device doesn't support this video.
+        </video>
+      </div>
       <div class="control">
-        <input type="text" v-model="query" placeholder="Configure Time Circuits..." id="search" name="search">
+        <input
+          type="text"
+          v-model="query"
+          placeholder="Configure Time Circuits..."
+          id="search"
+          name="search"
+        />
         <label for="search">Search</label>
+        <span data-bs-toggle="modal" data-bs-target="#aboutModal">About Remy</span>
       </div>
       <div class="projects">
         <div class="skewed">
           <project
-            v-for="item in list"
+            v-for="(item, i) in list"
             :name="item.name"
             :link="item.link"
             :description="item.description"
             :time="item.creationdate"
             loading="lazy"
+            @click="select(i)"
           ></project>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="aboutModal"
+        tabindex="-1"
+        aria-labelledby="aboutModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="aboutModalLabel">
+                About the Designer<
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class='img'>
+                <img src="" alt="Remy Serbinenko">
+              </div>
+              <div class="about-text">About</div>
+              <h2>His Future</h2>
+              <div class="future-text">Future</div>
+              <div class='img2'>
+                <img src="" alt="Remy Serbinenko">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
@@ -55,13 +108,13 @@
       <!--template-->
       <div id="time_machine">
         <circuit :section="now[0]" :mm="now[1]" :dd="now[2]" :yyyy="now[3]" :hr="now[4]" :min="now[5]"></circuit>
-        <circuit :section="then[0]" :mm="5" :dd="12" :yyyy="2026" :hr="31" :min="24"></circuit>
-        <circuit :section="was[0]" :mm="5" :dd="12" :yyyy="2026" :hr="31" :min="24"></circuit>
+        <circuit :section="then[0]" :mm="then[1]" :dd="then[2]" :yyyy="then[3]" :hr="then[4]" :min="then[5]"></circuit>
+        <circuit :section="was[0]" :mm="was[1]" :dd="was[2]" :yyyy="was[3]" :hr="was[4]" :min="was[4]"></circuit>
       </div>
       <!--template-->
     </script>
     <script type="text/x-template" id="project_item">
-      <div class="project">
+      <div class="project" @click="click">
         <div class="time">
           <div class="month display">
             <span :style="{'--value': mm}">888</span>
@@ -75,8 +128,8 @@
         </div>
           <a :href="link || '404.html'" target="_blank">
             <div class="iframe">
-              <iframe :src="link || '404.html'" :title="name" width="400px" height="100%"
-                sandbox="allow-scripts allow-same-origin">></iframe>
+              <!-- <iframe :src="link || '404.html'" :title="name" width="400px" height="100%"
+                sandbox="allow-scripts allow-same-origin">></iframe> -->
             </div>
           </a>
         <div class="about">

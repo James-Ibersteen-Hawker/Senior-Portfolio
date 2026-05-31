@@ -44,7 +44,7 @@ function zero(length, num) {
 }
 const circuits = {
   props: {
-    section: { type: String, default: "been" },
+    section: { type: Number, default: 0 },
     mm: { type: Number, default: 0 },
     dd: { type: Number, default: "1" },
     yyyy: { type: String, default: "0000" },
@@ -57,7 +57,7 @@ const circuits = {
     const label = (time) => ["Destination Time", "Arrival Time", "Last Time Departed"].at(time)
     const mm = computed(() => `'${months[props.mm - 1]}'`);
     const dd = computed(() => `'${zero(2, props.dd)}'`);
-    const yyyy = computed(() => `'${zero(4,props.yyyy).toString()}'`);
+    const yyyy = computed(() => `'${props.yyyy.toString().padStart(4, "0")}'`);
     const hr = computed(() => `'${zero(2, props.hr % 24)}'`);
     const min = computed(() => `'${zero(2, props.min % 60)}'`);
     const ampm = computed(() => props.hr >= 12 ? true : false);
@@ -141,12 +141,15 @@ export const project = {
     description: {type: String, default: ""},
     time: {type: Array, default: () => []},
   },
-  emits: [],
+  emits: ['click'],
   setup(props, {emit}) {
+    function click() {
+      emit('click');
+    }
     const mm = computed(() => `'${months[props.time[0] - 1]}'`);
     const dd = computed(() => `'${zero(2, props.time[1])}'`);
     const yyyy = computed(() => `'${zero(4, props.time[2]).toString()}'`);
-    return { mm, dd, yyyy }
+    return { mm, dd, yyyy, click }
   },
   template: "#project_item"
 }

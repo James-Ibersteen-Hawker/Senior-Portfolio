@@ -15,6 +15,18 @@ function resizeMap() {
 const App = createApp({
     setup() {
         let fuse;
+        const current = reactive({
+            item: null
+        })
+        const original = ref([-1, 9, 7, 2023, 8, 24])
+        const goTime = ref([]);
+        const today = new Date();
+        const day = today.getUTCDate();
+        const month = today.getUTCMonth();
+        const year = today.getUTCFullYear();
+        const hour = today.getHours();
+        const minutes = today.getMinutes();
+        const now = ref([1, month + 1, day, year, hour, minutes]);
         const data = reactive({ json: null })
         const query = ref("");
         const list = ref([]);
@@ -50,8 +62,27 @@ const App = createApp({
             const results = fuse.search(newval);
             list.value = results.map(e => e.item);
         })
+        function select(i) {
+            const video = document.querySelector("#timewarp")
+            const selected = list.value[i];
+            current.item = selected;
+            const overlay = document.querySelector(".timeMachineOverlay");
+            overlay.classList.add("fadein");
+            const [mm, dd, yyyy] = current.item.creationdate;
+            goTime.value = [1, mm, dd, yyyy, 12, 0]
+            setTimeout(() => {
+                video.classList.add("videoActivate");
+                video.play();
+            }, 1000);
+            setTimeout(() => {
+                video.pause();
+                video.classList.remove("videoActivate")
+                video.currentTime = 0;
+                overlay.classList.remove("fadein");
+            }, 4100)
+        }
         return {
-            data, query, list
+            data, query, list, select, goTime, now, original
         }
     }
 })
