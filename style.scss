@@ -312,7 +312,6 @@ body {
   background: gray;
   overflow: hidden;
   #time_machine {
-    background-color: red;
     width: 100vw !important;
     padding: 0 !important;
     max-width: 100vw;
@@ -560,6 +559,7 @@ $iframe-width: 400px;
         display: flex;
         align-items: center;
         .display {
+          width: fit-content;
           font: 60px $digital;
           border-radius: 2px;
           background: rgb(9, 9, 9);
@@ -678,5 +678,26 @@ $iframe-width: 400px;
       rgba(0, 0, 14, 0.8)
     );
     z-index: -1;
+  }
+}
+@media screen and (max-width: 600px) {
+  .project {
+    flex-direction: column;
+    .time, .iframe, .about {
+      width: 100% !important;
+    }
+    .time {
+      order: 3;
+      margin-bottom: 10px;
+    }
+    .iframe {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      order: 2;
+    }
+    .about {
+      order: 1;
+    }
   }
 }

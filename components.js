@@ -121,7 +121,13 @@ export const timeMachine = {
         else clearInterval(upInterval.value);
       }, 250);
     }
-    return { up, stop, speed, num, upInterval, active }
+    const today = new Date();
+    const day = today.getUTCDate();
+    const month = today.getUTCMonth();
+    const year = today.getUTCFullYear();
+    const hour = today.getHours();
+    const minutes = today.getMinutes();
+    return { up, stop, speed, num, upInterval, active, today: [day, month + 1, year, hour, minutes] }
   },
   template: '#time_machine_template',
   components: {
