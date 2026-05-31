@@ -63,6 +63,7 @@ const App = createApp({
             list.value = results.map(e => e.item);
         })
         function select(i) {
+            const projectModal = new bootstrap.Modal(document.querySelector("#projectModal"));
             const video = document.querySelector("#timewarp")
             const selected = list.value[i];
             current.item = selected;
@@ -75,6 +76,9 @@ const App = createApp({
                 video.play();
             }, 1000);
             setTimeout(() => {
+                projectModal.show();
+            }, 2000);
+            setTimeout(() => {
                 video.pause();
                 video.classList.remove("videoActivate")
                 video.currentTime = 0;
@@ -82,7 +86,7 @@ const App = createApp({
             }, 4100)
         }
         return {
-            data, query, list, select, goTime, now, original
+            data, query, list, select, goTime, now, original, current
         }
     }
 })

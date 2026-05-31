@@ -64,6 +64,7 @@
           ></project>
         </div>
       </div>
+
       <div
         class="modal fade"
         id="aboutModal"
@@ -93,6 +94,38 @@
               <div class="future-text">Future</div>
               <div class='img2'>
                 <img src="" alt="Remy Serbinenko">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal fade"
+        id="projectModal"
+        tabindex="-1"
+        aria-labelledby="projectModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="projectModalLabel">
+                <a :href="current.item?.link" target="_blank">{{current.item?.name}}<</a>
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="iframe">
+                <iframe :src="current.item?.link"></iframe>
+              </div>
+              <div class="about">
+                {{current.item?.description}}
               </div>
             </div>
           </div>
