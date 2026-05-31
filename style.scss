@@ -746,7 +746,8 @@ $iframe-width: 400px;
     transform: translate(-50%, -100%);
     opacity: 0;
   }
-  10%, 90% {
+  10%,
+  90% {
     display: flex;
     transform: translate(-50%, -50%);
     opacity: 1;
@@ -759,11 +760,12 @@ $iframe-width: 400px;
   0% {
     opacity: 0;
   }
-  20%, 70% {
+  20%,
+  70% {
     opacity: 1;
-  } 
+  }
   100% {
-  opacity: 0;
+    opacity: 0;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -786,6 +788,69 @@ $iframe-width: 400px;
     }
     .about {
       order: 1;
+    }
+  }
+}
+#aboutModal {
+  .modal-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .modal-content {
+      width: 80vw !important;
+      border-radius: 0;
+      background: url(../time-machine/gray-grime.png);
+      background-size: cover;
+      max-height: 90vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      .modal-title {
+        text-transform: uppercase;
+        font-family: $BTTF;
+        color: rgb(255, 217, 0);
+        font-size: 40px !important;
+        text-shadow: 0px 0px 10px black;
+      }
+      .modal-body {
+        img {
+          width: 100%;
+          border: 5px outset black;
+        }
+        .img {
+          width: 50%;
+          float: left;
+          margin: 10px;
+        }
+        .img2 {
+          width: 50%;
+          margin: 10px;
+          float: right;
+        }
+        .about-text {
+          text-align-last: right;
+          text-align: justify;
+        }
+        .future-text {
+          text-align-last: left;
+          text-align: justify;
+        }
+        .about-text,
+        .future-text {
+          color: black;
+          font-size: 18px;
+          font-weight: 800;
+        }
+        h2 {
+          white-space: nowrap;
+          font-family: $BTTF;
+          text-transform: lowercase;
+        }
+      }
     }
   }
 }
