@@ -530,10 +530,20 @@ body {
   position: relative;
 }
 .control span {
+  cursor: pointer;
   display: block;
-  background: red;
+  background: gray;
   text-align: center;
-  width: 100px;
+  width: 150px;
+  height: 30px;
+  color: orange;
+  text-shadow: 0px 0px 5px black, 0px 0px 5px black;
+  font-weight: 800;
+  border: 1px solid white;
+  transition: 0.5s;
+}
+.control span:hover {
+  background: rgb(211, 211, 211);
 }
 
 .projects {
@@ -611,7 +621,7 @@ body {
 .projects .skewed .project .iframe iframe {
   pointer-events: none;
   height: 100%;
-  margin-bottom: -6px;
+  margin-bottom: 10px;
   overflow: hidden;
 }
 .projects .skewed .project .about {
@@ -664,6 +674,14 @@ body {
           mask-image: linear-gradient(to bottom, transparent, white);
 }
 
+@media screen and (max-width: 600px) {
+  .projects {
+    background: linear-gradient(to bottom, transparent 0 40%, rgb(1, 1, 122)), url(../imgs/road.jpeg);
+  }
+  .projects::after, .projects::before {
+    display: none !important;
+  }
+}
 .p404 {
   background: url(../imgs/BTTF404page.png);
   display: flex;

@@ -166,12 +166,10 @@
             <span :style="{'--value': yyyy}">8888</span>
           </div>
         </div>
-          <a :href="link || '404.html'" target="_blank">
             <div class="iframe">
-              <!-- <iframe :src="link || '404.html'" :title="name" width="400px" height="100%"
-                sandbox="allow-scripts allow-same-origin"></iframe> -->
+              <iframe :src="link || '404.html'" :title="name" width="400px" height="100%"
+                sandbox="allow-scripts allow-same-origin"></iframe>
             </div>
-          </a>
         <div class="about">
           <h2 class="title">{{name}}</h2>
           <div class="description">{{description}}</div>
