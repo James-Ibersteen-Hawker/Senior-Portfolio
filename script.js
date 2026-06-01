@@ -16,7 +16,8 @@ const App = createApp({
     setup() {
         let fuse;
         const current = reactive({
-            item: null
+            item: null,
+            featured: false,
         })
         const original = ref([-1, 9, 7, 2023, 8, 24])
         const goTime = ref([]);
@@ -67,6 +68,8 @@ const App = createApp({
             const video = document.querySelector("#timewarp")
             const selected = list.value[i];
             current.item = selected;
+            current.featured = false;
+            if (selected.featuredDesc && selected.featuredDesc !== "") current.featured = true;
             const overlay = document.querySelector(".timeMachineOverlay");
             overlay.classList.add("fadein");
             const [mm, dd, yyyy] = current.item.creationdate;

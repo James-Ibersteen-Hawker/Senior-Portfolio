@@ -64,7 +64,6 @@
           ></project>
         </div>
       </div>
-
       <div
         class="modal fade"
         id="aboutModal"
@@ -112,7 +111,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="projectModalLabel">
-                <a :href="current.item?.link" target="_blank">{{current.item?.name}}<</a>
+                <a :href="current.item?.link || '404.html'" target="_blank">{{current.item?.name}}<</a>
               </h1>
               <button
                 type="button"
@@ -121,12 +120,19 @@
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" :class="{'featured': current.featured}">
               <div class="iframe">
-                <iframe :src="current.item?.link"></iframe>
+                <a :href="current.item?.link || '404.html'">
+                  <iframe :src="current.item?.link || '404.html'" sandbox="allow-scripts allow-same-origin"></iframe>
+                </a>
               </div>
               <div class="about">
                 {{current.item?.description}}
+              </div>
+              <hr>
+              <div class="featured" v-if="current.featured">
+                <div class="year">{{current.item?.year}}</div>
+                <div class="moreInfo">*featured -- {{current.item?.featuredDesc}}</div>
               </div>
             </div>
           </div>
@@ -163,7 +169,7 @@
           <a :href="link || '404.html'" target="_blank">
             <div class="iframe">
               <!-- <iframe :src="link || '404.html'" :title="name" width="400px" height="100%"
-                sandbox="allow-scripts allow-same-origin">></iframe> -->
+                sandbox="allow-scripts allow-same-origin"></iframe> -->
             </div>
           </a>
         <div class="about">
