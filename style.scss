@@ -519,7 +519,7 @@ body {
   align-items: center;
   justify-content: center;
   input {
-    width: calc(100% - 300px);
+    width: calc(100vw - 100px);
     background: black;
     color: rgba(255, 255, 0, 0.8);
     font-family: "Courier New", Courier, monospace;
@@ -694,7 +694,10 @@ $iframe-width: 400px;
 }
 @media screen and (max-width: 600px) {
   .projects {
-    background: linear-gradient(to bottom, transparent 0 40%, rgb(1, 1, 122)), url(../imgs/road.jpeg)
+    background: linear-gradient(to bottom, transparent 0 40%, rgb(1, 1, 122)), url(../imgs/road.jpeg);
+    .skewed {
+      transform: rotateX(0deg) !important;
+    }
   }
   .projects::after, .projects::before {
     display: none !important;
@@ -885,6 +888,8 @@ $iframe-width: 400px;
     justify-content: center;
     align-items: center;
     .modal-content {
+      margin-left: auto;
+      margin-right: auto;
       width: 80vw !important;
       border-radius: 0;
       background: url(../time-machine/gray-grime.png);
