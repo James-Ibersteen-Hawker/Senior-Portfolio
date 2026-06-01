@@ -525,6 +525,7 @@ body {
     height: 30px;
     margin: 0;
     border: none !important;
+    padding-left: 10px;
     &:focus {
       outline: none;
     }
@@ -546,8 +547,9 @@ body {
     display: block;
     background: gray;
     text-align: center;
-    width: 150px;
+    width: 120px;
     height: 30px;
+    margin-left: 10px;
     color: orange;
     text-shadow: 0px 0px 5px black, 0px 0px 5px black;
     font-weight: 800;
@@ -588,6 +590,7 @@ $iframe-width: 400px;
     transform-origin: top center;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    padding-bottom: 150px;
     .project {
       background:
         linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
@@ -600,20 +603,22 @@ $iframe-width: 400px;
       transition: 0.5s;
       cursor: pointer;
       display: flex;
+      overflow-x: hidden;
       .time {
         width: 500px;
         border-right: 2px solid rgb(56, 56, 56);
-        justify-content: space-between;
+        justify-content: center;
         display: flex;
         align-items: center;
+        max-width: 100%;
         .display {
-          width: fit-content;
+          display: inline-block;
+          width: auto !important;
           font: 60px $digital;
           border-radius: 2px;
           background: rgb(9, 9, 9);
           padding: 3px 3px 0px 6px;
           line-height: 40px;
-          flex: 1 1;
           margin: 0 10px;
           text-align: center;
           position: relative;
@@ -874,6 +879,7 @@ $iframe-width: 400px;
 }
 #projectModal {
   .modal-dialog {
+    max-width: 80vw !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -887,6 +893,7 @@ $iframe-width: 400px;
       overflow-x: hidden;
       -ms-overflow-style: none;
       scrollbar-width: none;
+      border: 3px solid black;
       &::-webkit-scrollbar {
         display: none;
       }
@@ -911,12 +918,14 @@ $iframe-width: 400px;
           }
         }
         .about {
-          text-shadow: 0px 0px 3px white, 0px 0px 1px yellow, 0px 0px 4px orange;
+          // text-shadow: 0px 0px 3px white, 0px 0px 1px yellow, 0px 0px 4px orange;
           text-align-last: right;
           text-align: justify;
-          color: black;
+          color: white;
           font-size: 18px;
           font-weight: 800;
+          background: black;
+          padding: 10px;
         }
         .year {
           font-size: 25px;;

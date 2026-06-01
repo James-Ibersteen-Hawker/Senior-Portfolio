@@ -510,6 +510,7 @@ body {
   height: 30px;
   margin: 0;
   border: none !important;
+  padding-left: 10px;
 }
 .control input:focus {
   outline: none;
@@ -534,8 +535,9 @@ body {
   display: block;
   background: gray;
   text-align: center;
-  width: 150px;
+  width: 120px;
   height: 30px;
+  margin-left: 10px;
   color: orange;
   text-shadow: 0px 0px 5px black, 0px 0px 5px black;
   font-weight: 800;
@@ -564,6 +566,7 @@ body {
   transform-origin: top center;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  padding-bottom: 150px;
 }
 .projects .skewed .project {
   background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../time-machine/gray-grime.png);
@@ -575,23 +578,24 @@ body {
   transition: 0.5s;
   cursor: pointer;
   display: flex;
+  overflow-x: hidden;
 }
 .projects .skewed .project .time {
   width: 500px;
   border-right: 2px solid rgb(56, 56, 56);
-  justify-content: space-between;
+  justify-content: center;
   display: flex;
   align-items: center;
+  max-width: 100%;
 }
 .projects .skewed .project .time .display {
-  width: -moz-fit-content;
-  width: fit-content;
+  display: inline-block;
+  width: auto !important;
   font: 60px "alarm clock", sans-serif;
   border-radius: 2px;
   background: rgb(9, 9, 9);
   padding: 3px 3px 0px 6px;
   line-height: 40px;
-  flex: 1 1;
   margin: 0 10px;
   text-align: center;
   position: relative;
@@ -859,6 +863,7 @@ body {
 }
 
 #projectModal .modal-dialog {
+  max-width: 80vw !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -873,6 +878,7 @@ body {
   overflow-x: hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  border: 3px solid black;
 }
 #projectModal .modal-dialog .modal-content::-webkit-scrollbar {
   display: none;
@@ -895,13 +901,14 @@ body {
   border: 3px outset black;
 }
 #projectModal .modal-dialog .modal-content .modal-body .about {
-  text-shadow: 0px 0px 3px white, 0px 0px 1px yellow, 0px 0px 4px orange;
   -moz-text-align-last: right;
        text-align-last: right;
   text-align: justify;
-  color: black;
+  color: white;
   font-size: 18px;
   font-weight: 800;
+  background: black;
+  padding: 10px;
 }
 #projectModal .modal-dialog .modal-content .modal-body .year {
   font-size: 25px;
