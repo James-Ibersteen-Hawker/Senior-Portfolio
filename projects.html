@@ -28,7 +28,8 @@
       <div class="header">PROJECTS<</div>
       <div class="timeMachineOverlay">
         <time-machine :now="goTime" :then="now" :was="original"></time-machine>
-        <video id="timewarp"
+        <video
+          id="timewarp"
           disablepictureinpicture
           disableremoteplayback
           loading="eager"
@@ -36,7 +37,10 @@
           playsinline
           preload
         >
-          <source src="./time-machine/BTTF Time Transition.mp4" type="video/mp4"/>
+          <source
+            src="./time-machine/BTTF Time Transition.mp4"
+            type="video/mp4"
+          />
           Your device doesn't support this video.
         </video>
       </div>
@@ -49,7 +53,9 @@
           name="search"
         />
         <!-- <label for="search">Search</label> -->
-        <span data-bs-toggle="modal" data-bs-target="#aboutModal">About Remy</span>
+        <span data-bs-toggle="modal" data-bs-target="#aboutModal"
+          >About Remy</span
+        >
       </div>
       <div class="projects">
         <div class="skewed">
@@ -85,15 +91,24 @@
               ></button>
             </div>
             <div class="modal-body">
-              <div class='img'>
-                <img src="./imgs/IMG_2159.png" alt="Remy Serbinenko">
+              <div class="img">
+                <img src="./imgs/IMG_2159.png" alt="Remy Serbinenko" />
               </div>
-              <div class="about-text">I am a passionate artist that enjoys both the artistic side and the technical side of many crafts. I am currently a graduating Senior of Marlboro High School, and am going to RIT. In my spare time I play the piano, draw, rock climb, and write JavaScript.</div>
-              <hr>
+              <div class="about-text">
+                I am a passionate artist that enjoys both the artistic side and
+                the technical side of many crafts. I am currently a graduating
+                Senior of Marlboro High School, and am going to RIT. In my spare
+                time I play the piano, draw, rock climb, and write JavaScript.
+              </div>
+              <hr />
               <h2>> His Future</h2>
-              <div class="future-text">I am majoring in Film Production at the Rochester Institute of Technology. I hope to continue doing web design alongside, using my knowledge of code to assist me in the filmmaking industry.</div>
-              <div class='img2'>
-                <img src="./imgs/RITLogo.jpg" alt="RIT Logo">
+              <div class="future-text">
+                I am majoring in Film Production at the Rochester Institute of
+                Technology. I hope to continue doing web design alongside, using
+                my knowledge of code to assist me in the filmmaking industry.
+              </div>
+              <div class="img2">
+                <img src="./imgs/RITLogo.jpg" alt="RIT Logo" />
               </div>
             </div>
           </div>
@@ -111,7 +126,9 @@
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="projectModalLabel">
-                <a :href="current.item?.link || '404.html'" target="_blank">{{current.item?.name}}<</a>
+                <a :href="current.item?.link || '404.html'" target="_blank"
+                  >{{current.item?.name}}<</a
+                >
               </h1>
               <button
                 type="button"
@@ -121,18 +138,22 @@
               ></button>
             </div>
             <div class="modal-body" :class="{'featured': current.featured}">
-              <div class="iframe">
-                <a :href="current.item?.link || '404.html'">
-                  <iframe :src="current.item?.link || '404.html'" sandbox="allow-scripts allow-same-origin"></iframe>
-                </a>
-              </div>
-              <div class="about">
-                {{current.item?.description}}
-              </div>
-              <hr>
+              <a :href="current.item?.link || '404.html'">
+                <div class="iframe">
+                  <iframe
+                    :src="current.item?.link || '404.html'"
+                    sandbox="allow-scripts allow-same-origin"
+                  ></iframe>
+                </div>
+              </a>
+
+              <div class="about">{{current.item?.description}}</div>
+              <hr />
               <div class="featured" v-if="current.featured">
                 <div class="year">{{current.item?.year}}</div>
-                <div class="moreInfo">*featured -- {{current.item?.featuredDesc}}</div>
+                <div class="moreInfo">
+                  *featured -- {{current.item?.featuredDesc}}
+                </div>
               </div>
             </div>
           </div>
