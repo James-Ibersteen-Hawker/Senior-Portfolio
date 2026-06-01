@@ -140,22 +140,34 @@
             <div class="modal-body" :class="{'featured': current.featured}">
               <a :href="current.item?.link || '404.html'">
                 <div class="iframe">
-                  <iframe v-if="current.item?.link"
+                  <iframe
+                    v-if="current.item?.link"
                     :src="current.item?.link"
                     sandbox="allow-scripts allow-same-origin"
                   ></iframe>
-                  <img src="./time-machine/errorimage.png" v-if="!current.item?.link">
+                  <img
+                    src="./time-machine/errorimage.png"
+                    v-if="!current.item?.link"
+                  />
                 </div>
               </a>
 
-              <div class="about">{{current.item?.description}}
-                <span v-if="!current.item?.link"><br><br>This project has unfortunately been lost in the space-time continuum.</span>
+              <div class="about">
+                {{current.item?.description}}
+                <span v-if="!current.item?.link"
+                  ><br /><br />This project has unfortunately been lost in the
+                  space-time continuum.</span
+                >
               </div>
               <hr />
               <div class="featured" v-if="current.featured">
                 <div class="year">{{current.item?.year}}</div>
                 <div class="moreInfo">
                   *featured -- {{current.item?.featuredDesc}}
+                  <h3>Skills Learned</h3>
+                  <ul>
+                    <li v-for="skill in current.item?.skills">{{skill}}</li>
+                  </ul>
                 </div>
               </div>
             </div>

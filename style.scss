@@ -948,6 +948,21 @@ $iframe-width: 400px;
           border: 3px outset black;
           border-radius: 5px;
         }
+        h3 {
+          font-size: 20px;
+          font-family: Georgia, 'Times New Roman', Times, serif;
+          text-align: right;
+        }
+        ul {
+          direction: rtl;
+          text-align: right;
+          li {
+            direction: rtl;
+            font-variant: small-caps;
+            list-style-type: '>>';
+            padding-right: 5px;
+          }
+        }
       }
     }
   }
