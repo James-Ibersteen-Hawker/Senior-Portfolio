@@ -25,7 +25,7 @@
 
   <body>
     <main id="vue_app" class="portfolio_page">
-      <div class="header">PROJECTS<</div>
+      <div class="header"><a href="index.html">PROJECTS<</a></div>
       <div class="timeMachineOverlay">
         <time-machine :now="goTime" :then="now" :was="original"></time-machine>
         <video
@@ -140,14 +140,17 @@
             <div class="modal-body" :class="{'featured': current.featured}">
               <a :href="current.item?.link || '404.html'">
                 <div class="iframe">
-                  <iframe
-                    :src="current.item?.link || '404.html'"
+                  <iframe v-if="current.item?.link"
+                    :src="current.item?.link"
                     sandbox="allow-scripts allow-same-origin"
                   ></iframe>
+                  <img src="./time-machine/errorimage.png" v-if="!current.item?.link">
                 </div>
               </a>
 
-              <div class="about">{{current.item?.description}}</div>
+              <div class="about">{{current.item?.description}}
+                <span v-if="!current.item?.link"><br><br>This project has unfortunately been lost in the space-time continuum.</span>
+              </div>
               <hr />
               <div class="featured" v-if="current.featured">
                 <div class="year">{{current.item?.year}}</div>

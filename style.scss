@@ -489,7 +489,8 @@ body {
     }
   }
 }
-.header {
+.header a {
+  text-decoration: none;
   font-family: $BTTF;
   color: gold;
   height: 100px;
@@ -912,8 +913,10 @@ $iframe-width: 400px;
           float: left;
           margin-right: 10px;
           pointer-events: none;
-          iframe {
+          iframe, img {
             width: 100%;
+            max-width: 500px;
+            aspect-ratio: 5/3;
             border: 3px outset black;
           }
         }

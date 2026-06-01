@@ -478,7 +478,8 @@ body {
     display: none !important;
   }
 }
-.header {
+.header a {
+  text-decoration: none;
   font-family: "BTTF", sans-serif;
   color: gold;
   height: 100px;
@@ -896,8 +897,10 @@ body {
   margin-right: 10px;
   pointer-events: none;
 }
-#projectModal .modal-dialog .modal-content .modal-body .iframe iframe {
+#projectModal .modal-dialog .modal-content .modal-body .iframe iframe, #projectModal .modal-dialog .modal-content .modal-body .iframe img {
   width: 100%;
+  max-width: 500px;
+  aspect-ratio: 5/3;
   border: 3px outset black;
 }
 #projectModal .modal-dialog .modal-content .modal-body .about {
