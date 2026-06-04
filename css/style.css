@@ -968,4 +968,22 @@ body {
   font-variant: small-caps;
   list-style-type: ">>";
   padding-right: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .modal-dialog {
+    max-width: unset !important;
+  }
+  #projectModal .modal-body {
+    flex-direction: column;
+  }
+  #projectModal .modal-body a, #projectModal .modal-body .about {
+    width: 100% !important;
+  }
+  #projectModal .modal-body .moreInfo .col1 {
+    width: 60%;
+  }
+  #projectModal .modal-body .moreInfo .col2 {
+    width: 40%;
+  }
 }/*# sourceMappingURL=style.css.map */

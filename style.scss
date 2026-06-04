@@ -935,7 +935,6 @@ $iframe-width: 400px;
       font-size: 30px;
       text-shadow: 0px 0px 10px black;
     }
-
     .modal-body {
       display: flex;
       flex-wrap: wrap;
@@ -997,6 +996,25 @@ $iframe-width: 400px;
           list-style-type: ">>";
           padding-right: 5px;
         }
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .modal-dialog {
+    max-width: unset !important;
+  }
+  #projectModal .modal-body {
+    flex-direction: column;
+    a, .about {
+      width: 100% !important;
+    }
+    .moreInfo {
+      .col1 {
+        width: 60%;
+      }
+      .col2 {
+        width: 40%;
       }
     }
   }
