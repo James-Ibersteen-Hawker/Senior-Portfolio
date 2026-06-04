@@ -17,16 +17,62 @@
   </head>
 
   <body>
-    <div class="hero">
-      <div class="bus"></div>
-      <div class="center">
-        <h2 class="top">REMY SERBINENKO></h2>
-        <h2 class="bottom">WEB DESIGNER<</h2>
+    <main id="vue_app">
+      <div class="hero">
+        <div class="bus"></div>
+        <div class="center">
+          <h2 class="top" data-bs-toggle="modal" data-bs-target="#aboutModal">REMY SERBINENKO></h2>
+          <h2 class="bottom">WEB DESIGNER<</h2>
+        </div>
       </div>
-    </div>
-    <footer class="footer" id="vue_app">
-      <time-machine></time-machine>
-    </footer>
+      <footer class="footer">
+        <time-machine></time-machine>
+      </footer>
+       <div
+        class="modal fade"
+        id="aboutModal"
+        tabindex="-1"
+        aria-labelledby="aboutModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="aboutModalLabel">
+                About the Designer<
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="img">
+                <img src="./imgs/IMG_2159.png" alt="Remy Serbinenko" />
+              </div>
+              <div class="about-text">
+                I am a passionate artist that enjoys both the artistic side and
+                the technical side of many crafts. I am currently a graduating
+                Senior of Marlboro High School, and am going to RIT. In my spare
+                time I play the piano, draw, rock climb, and write JavaScript.
+              </div>
+              <hr />
+              <h2>> His Future</h2>
+              <div class="future-text">
+                I am majoring in Film Production at the Rochester Institute of
+                Technology. I hope to continue doing web design alongside, using
+                my knowledge of code to assist me in the filmmaking industry.
+              </div>
+              <div class="img2">
+                <img src="./imgs/RITLogo.jpg" alt="RIT Logo" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
@@ -36,16 +82,19 @@
       <!--template-->
       <div id="time_machine">
         <circuit :section="-1" :mm="9" :dd="7" :yyyy="2023" :hr="8" :min="24"></circuit>
-        <div class="speedometer" @mouseenter="up" @mouseleave="stop" :class="{'off': !active}">
-          <div class="buttons">
-            to
+        <div class="button88">
+        <span>Hover or tap on the speedometer. At 88, click.</span>
+          <div class="speedometer" @mouseenter="up" @mouseleave="stop" :class="{'off': !active}">
+            <div class="buttons">
+             to
+            </div>
+            <a href="./projects.html" target="_self">
+              <div class="intothebutton">
+                <span>{{speed}}.&nbsp;</span>
+              </div>
+            </a>
           </div>
-        <a href="./projects.html" target="_self">
-          <div class="intothebutton">
-            <span>{{speed}}.&nbsp;</span>
-          </div>
-        </a>
-      </div>
+        </div>
         <circuit :section="1" :mm="today[1]" :dd="today[0]" :yyyy="today[2]" :hr="today[3]" :min="today[4]"></circuit>
       </div>
       <!--template-->

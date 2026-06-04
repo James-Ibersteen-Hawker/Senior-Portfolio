@@ -290,6 +290,15 @@ body {
       background-image: radial-gradient(orange, rgb(255, 217, 0));
       filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.5));
     }
+    .top {
+      cursor: pointer;
+      text-decoration: underline;
+      filter: drop-shadow(0px 0px 10px rgb(0, 132, 255));
+      transition: 0.2s;
+      &:hover {
+        filter: drop-shadow(0px 0px 10px rgb(0, 10, 99));
+      }
+    }
   }
   .bus {
     background: url(../imgs/bus.png);
@@ -335,110 +344,126 @@ body {
       padding-right: 30px;
     }
   }
-  .speedometer {
-    box-shadow: 0px 0px 5px black;
-    margin-top: 20px;
-    margin-bottom: 5px;
-    background: linear-gradient(
-      to right,
-      rgb(206, 190, 169) 0 97%,
-      rgb(245, 235, 221)
-    );
-    padding: 0px 40px 8px 40px;
-    border-radius: 5px;
-    position: relative;
-    &::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 10px;
-      top: 0;
-      left: 0;
-      border-radius: 5px;
-      box-shadow: 0px 1px 1px black;
-      transform: translateY(calc(-100% - 1px));
-      background:
-        linear-gradient(to top, transparent 0 40%, rgb(245, 235, 221) 80%),
-        linear-gradient(to right, rgb(206, 190, 169) 0 97%, rgb(245, 235, 221));
+  .button88 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    span {
+      color: black;
+      font-weight: 700;
+      font-size: 18px;
     }
-    a {
-      text-decoration: none;
-      .intothebutton {
-        box-shadow: -2px 2px 3px rgb(245, 235, 221);
-        width: 120px;
-        background: black;
-        border-bottom-left-radius: 2px;
-        border-bottom-right-radius: 2px;
-        span {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 4px 8px 0 8px;
-          background-image: radial-gradient(white, rgb(255, 177, 177));
-          color: transparent;
-          background-clip: text;
-          font-family: $digital;
-          width: 100%;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 50px;
-          line-height: 50px;
-          text-align: left;
-          filter: drop-shadow(0px 0px 2px red) drop-shadow(0px 0px 3px red);
+    .speedometer {
+      box-shadow: 0px 0px 5px black;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      background: linear-gradient(
+        to right,
+        rgb(206, 190, 169) 0 97%,
+        rgb(245, 235, 221)
+      );
+      padding: 0px 40px 8px 40px;
+      border-radius: 5px;
+      position: relative;
+      width: fit-content;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 10px;
+        top: 0;
+        left: 0;
+        border-radius: 5px;
+        box-shadow: 0px 1px 1px black;
+        transform: translateY(calc(-100% - 1px));
+        background:
+          linear-gradient(to top, transparent 0 40%, rgb(245, 235, 221) 80%),
+          linear-gradient(
+            to right,
+            rgb(206, 190, 169) 0 97%,
+            rgb(245, 235, 221)
+          );
+      }
+      a {
+        text-decoration: none;
+        .intothebutton {
+          box-shadow: -2px 2px 3px rgb(245, 235, 221);
+          width: 120px;
+          background: black;
+          border-bottom-left-radius: 2px;
+          border-bottom-right-radius: 2px;
+          span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 4px 8px 0 8px;
+            background-image: radial-gradient(white, rgb(255, 177, 177));
+            color: transparent;
+            background-clip: text;
+            font-family: $digital;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            line-height: 50px;
+            text-align: left;
+            filter: drop-shadow(0px 0px 2px red) drop-shadow(0px 0px 3px red);
+          }
         }
       }
-    }
-    &.off {
-      a {
-        pointer-events: none;
-        cursor: default;
+      &.off {
+        a {
+          pointer-events: none;
+          cursor: default;
+        }
       }
-    }
-    .buttons {
-      position: absolute;
-      top: calc(50% - 2px);
-      left: 20px;
-      transform: translate(-50%, -50%);
-      background-color: rgb(31, 31, 31);
-      color: white;
-      font-variant: small-caps;
-      line-height: 18px;
-      font-size: 20px;
-      padding-bottom: 1px;
-      padding-left: 3px;
-      padding-right: 3px;
-      font-family:
-        "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-      box-shadow: 0px 0px 3px rgb(0, 0, 0) inset;
-      border-radius: 2px;
-      &::before {
-        content: "set";
+      .buttons {
         position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%, -100%);
-        background: inherit;
-        box-shadow: inherit;
-        border-radius: inherit;
-        padding: inherit;
-        font-family: inherit;
-      }
-      &::after {
-        content: "88";
-        font-family: inherit;
-        font-size: 15px;
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        transform: translate(-50%, 100%);
-        box-shadow: inherit;
-        border-radius: inherit;
-        padding: inherit;
-        line-height: 12px;
-        padding-top: 4px;
-        background: rgb(173, 0, 0);
+        top: calc(50% - 2px);
+        left: 20px;
+        transform: translate(-50%, -50%);
+        background-color: rgb(31, 31, 31);
+        color: white;
+        font-variant: small-caps;
+        line-height: 18px;
+        font-size: 20px;
+        padding-bottom: 1px;
+        padding-left: 3px;
+        padding-right: 3px;
+        font-family:
+          "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+        box-shadow: 0px 0px 3px rgb(0, 0, 0) inset;
+        border-radius: 2px;
+        &::before {
+          content: "set";
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translate(-50%, -100%);
+          background: inherit;
+          box-shadow: inherit;
+          border-radius: inherit;
+          padding: inherit;
+          font-family: inherit;
+        }
+        &::after {
+          content: "88";
+          font-family: inherit;
+          font-size: 15px;
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          transform: translate(-50%, 100%);
+          box-shadow: inherit;
+          border-radius: inherit;
+          padding: inherit;
+          line-height: 12px;
+          padding-top: 4px;
+          background: rgb(173, 0, 0);
+        }
       }
     }
   }
@@ -552,7 +577,9 @@ body {
     height: 30px;
     margin-left: 10px;
     color: orange;
-    text-shadow: 0px 0px 5px black, 0px 0px 5px black;
+    text-shadow:
+      0px 0px 5px black,
+      0px 0px 5px black;
     font-weight: 800;
     border: 1px solid white;
     transition: 0.5s;
@@ -694,12 +721,15 @@ $iframe-width: 400px;
 }
 @media screen and (max-width: 600px) {
   .projects {
-    background: linear-gradient(to bottom, transparent 0 40%, rgb(1, 1, 122)), url(../imgs/road.jpeg);
+    background:
+      linear-gradient(to bottom, transparent 0 40%, rgb(1, 1, 122)),
+      url(../imgs/road.jpeg);
     .skewed {
       transform: rotateX(0deg) !important;
     }
   }
-  .projects::after, .projects::before {
+  .projects::after,
+  .projects::before {
     display: none !important;
   }
 }
@@ -918,7 +948,8 @@ $iframe-width: 400px;
           float: left;
           margin-right: 10px;
           pointer-events: none;
-          iframe, img {
+          iframe,
+          img {
             width: 100%;
             max-width: 500px;
             aspect-ratio: 5/3;
@@ -936,9 +967,9 @@ $iframe-width: 400px;
           padding: 10px;
         }
         .year {
-          font-size: 25px;;
+          font-size: 25px;
           font-style: italic;
-          font-family: Georgia, 'Times New Roman', Times, serif;
+          font-family: Georgia, "Times New Roman", Times, serif;
           font-weight: 800;
         }
         .moreInfo {
@@ -950,7 +981,7 @@ $iframe-width: 400px;
         }
         h3 {
           font-size: 20px;
-          font-family: Georgia, 'Times New Roman', Times, serif;
+          font-family: Georgia, "Times New Roman", Times, serif;
           text-align: right;
         }
         ul {
@@ -959,7 +990,7 @@ $iframe-width: 400px;
           li {
             direction: rtl;
             font-variant: small-caps;
-            list-style-type: '>>';
+            list-style-type: ">>";
             padding-right: 5px;
           }
         }
