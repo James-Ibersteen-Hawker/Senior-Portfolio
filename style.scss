@@ -32,6 +32,7 @@ $gray: rgb(57, 57, 57);
 $digital: "alarm clock", sans-serif;
 $BTTF: "BTTF", sans-serif;
 $footer-height: 110px;
+$gray-grime: "../time-machine/gray-grime.png";
 
 html,
 body {
@@ -115,6 +116,11 @@ body {
     transform: translate(-50%, -100%);
     padding: 0 7px 2px 7px;
   }
+}
+@mixin centerflex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .machine {
   position: fixed;
@@ -676,12 +682,6 @@ $iframe-width: 400px;
           }
         }
       }
-      .iframe iframe {
-        pointer-events: none;
-        height: 100%;
-        margin-bottom: 10px;
-        overflow: hidden;
-      }
       .about {
         font-family: "Open Sans", sans-serif;
         color: black;
@@ -829,19 +829,12 @@ $iframe-width: 400px;
   .project {
     flex-direction: column;
     .time,
-    .iframe,
     .about {
       width: 100% !important;
     }
     .time {
       order: 3;
       margin-bottom: 10px;
-    }
-    .iframe {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      order: 2;
     }
     .about {
       order: 1;
@@ -912,87 +905,97 @@ $iframe-width: 400px;
   }
 }
 #projectModal {
+  $serif: Georgia, "Times New Roman", serif;
+  $blackborder: 3px solid black;
   .modal-dialog {
-    max-width: 80vw !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .modal-content {
-      margin-left: auto;
-      margin-right: auto;
-      width: 80vw !important;
-      border-radius: 0;
-      background: url(../time-machine/gray-grime.png);
-      background-size: cover;
-      max-height: 90vh;
-      overflow-y: auto;
-      overflow-x: hidden;
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-      border: 3px solid black;
-      &::-webkit-scrollbar {
-        display: none;
-      }
-      .modal-title {
-        a {
-          text-transform: uppercase;
-          font-family: $BTTF;
-          color: rgb(255, 217, 0);
-          font-size: 30px !important;
-          text-shadow: 0px 0px 10px black;
+    max-width: 80vw;
+    @include centerflex();
+  }
+  .modal-content {
+    width: 80vw;
+    max-height: 90vh;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    margin-inline: auto;
+    border: $blackborder;
+    border-radius: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: {
+      image: url($gray-grime);
+      size: cover;
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .modal-title a {
+      text-transform: uppercase;
+      font-family: $BTTF;
+      color: rgb(255, 217, 0);
+      font-size: 30px;
+      text-shadow: 0px 0px 10px black;
+    }
+
+    .modal-body {
+      display: flex;
+      flex-wrap: wrap;
+      a {
+        width: 50%;
+        height: fit-content;
+        iframe,
+        img {
+          width: 100%;
+          max-width: 500px;
+          aspect-ratio: 5/3;
+          border: $blackborder;
         }
       }
-      .modal-body {
-        .iframe {
-          width: 50%;
-          float: left;
-          margin-right: 10px;
-          pointer-events: none;
-          iframe,
-          img {
-            width: 100%;
-            max-width: 500px;
-            aspect-ratio: 5/3;
-            border: 3px outset black;
-          }
+      .about {
+        height: fit-content;
+        width: calc(50% - 5px);
+        text-align-last: right;
+        text-align: justify;
+        color: white;
+        font-size: 18px;
+        font-weight: 800;
+        background: black;
+        padding: 10px;
+      }
+      .year {
+        font: {
+          size: 25px;
+          style: italic;
+          family: $serif;
+          weight: 800;
         }
-        .about {
-          // text-shadow: 0px 0px 3px white, 0px 0px 1px yellow, 0px 0px 4px orange;
-          text-align-last: right;
-          text-align: justify;
-          color: white;
-          font-size: 18px;
-          font-weight: 800;
-          background: black;
-          padding: 10px;
-        }
-        .year {
-          font-size: 25px;
-          font-style: italic;
-          font-family: Georgia, "Times New Roman", Times, serif;
-          font-weight: 800;
-        }
-        .moreInfo {
-          font-weight: 800;
-          background: radial-gradient(yellow, orange 90%, transparent);
-          padding: 10px;
-          border: 3px outset black;
-          border-radius: 5px;
-        }
-        h3 {
-          font-size: 20px;
-          font-family: Georgia, "Times New Roman", Times, serif;
-          text-align: right;
-        }
-        ul {
+      }
+    }
+    .moreInfo {
+      display: flex;
+      font-weight: 800;
+      background: radial-gradient(yellow, orange 90%, transparent);
+      padding: 10px;
+      border: $blackborder;
+      border-radius: 5px;
+      .col1 {
+        width: 80%;
+      }
+      .col2 {
+        width: 20%;
+      }
+      h3 {
+        font-size: 20px;
+        font-family: $serif;
+        text-align: right;
+      }
+      ul {
+        direction: rtl;
+        text-align: right;
+        li {
           direction: rtl;
-          text-align: right;
-          li {
-            direction: rtl;
-            font-variant: small-caps;
-            list-style-type: ">>";
-            padding-right: 5px;
-          }
+          font-variant: small-caps;
+          list-style-type: ">>";
+          padding-right: 5px;
         }
       }
     }

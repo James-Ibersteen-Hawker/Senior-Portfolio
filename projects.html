@@ -104,7 +104,6 @@
                   />
                 </div>
               </a>
-
               <div class="about">
                 {{current.item?.description}}
                 <span v-if="!current.item?.link"
@@ -116,13 +115,17 @@
               <div class="featured" v-if="current.featured">
                 <div class="year">{{current.item?.year}}</div>
                 <div class="moreInfo">
-                  *featured -- {{current.item?.featuredDesc}}
+                  <div class="col1">
+                    *featured -- {{current.item?.featuredDesc}}
+                    <h3 style="text-align: left">Reflection</h3>
+                    {{current.item?.reflection}}
+                  </div>
+                  <div class="col2">
                   <h3>Skills Learned</h3>
                   <ul>
                     <li v-for="skill in current.item?.skills">{{skill}}</li>
                   </ul>
-                  <h3 style="text-align: left;">Reflection</h3>
-                  {{current.item?.reflection}}
+                  </div>
                 </div>
               </div>
             </div>

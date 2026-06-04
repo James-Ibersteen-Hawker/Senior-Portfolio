@@ -645,12 +645,6 @@ body {
   -webkit-background-clip: text;
           background-clip: text;
 }
-.projects .skewed .project .iframe iframe {
-  pointer-events: none;
-  height: 100%;
-  margin-bottom: 10px;
-  overflow: hidden;
-}
 .projects .skewed .project .about {
   font-family: "Open Sans", sans-serif;
   color: black;
@@ -809,19 +803,12 @@ body {
     flex-direction: column;
   }
   .project .time,
-  .project .iframe,
   .project .about {
     width: 100% !important;
   }
   .project .time {
     order: 3;
     margin-bottom: 10px;
-  }
-  .project .iframe {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    order: 2;
   }
   .project .about {
     order: 1;
@@ -890,49 +877,54 @@ body {
 }
 
 #projectModal .modal-dialog {
-  max-width: 80vw !important;
+  max-width: 80vw;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#projectModal .modal-dialog .modal-content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 80vw !important;
-  border-radius: 0;
-  background: url(../time-machine/gray-grime.png);
-  background-size: cover;
+#projectModal .modal-content {
+  width: 80vw;
   max-height: 90vh;
-  overflow-y: auto;
-  overflow-x: hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  margin-inline: auto;
   border: 3px solid black;
+  border-radius: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-image: url("../time-machine/gray-grime.png");
+  background-size: cover;
 }
-#projectModal .modal-dialog .modal-content::-webkit-scrollbar {
+#projectModal .modal-content::-webkit-scrollbar {
   display: none;
 }
-#projectModal .modal-dialog .modal-content .modal-title a {
+#projectModal .modal-content .modal-title a {
   text-transform: uppercase;
   font-family: "BTTF", sans-serif;
   color: rgb(255, 217, 0);
-  font-size: 30px !important;
+  font-size: 30px;
   text-shadow: 0px 0px 10px black;
 }
-#projectModal .modal-dialog .modal-content .modal-body .iframe {
-  width: 50%;
-  float: left;
-  margin-right: 10px;
-  pointer-events: none;
+#projectModal .modal-content .modal-body {
+  display: flex;
+  flex-wrap: wrap;
 }
-#projectModal .modal-dialog .modal-content .modal-body .iframe iframe,
-#projectModal .modal-dialog .modal-content .modal-body .iframe img {
+#projectModal .modal-content .modal-body a {
+  width: 50%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+#projectModal .modal-content .modal-body a iframe,
+#projectModal .modal-content .modal-body a img {
   width: 100%;
   max-width: 500px;
   aspect-ratio: 5/3;
-  border: 3px outset black;
+  border: 3px solid black;
 }
-#projectModal .modal-dialog .modal-content .modal-body .about {
+#projectModal .modal-content .modal-body .about {
+  height: -moz-fit-content;
+  height: fit-content;
+  width: calc(50% - 5px);
   -moz-text-align-last: right;
        text-align-last: right;
   text-align: justify;
@@ -942,29 +934,36 @@ body {
   background: black;
   padding: 10px;
 }
-#projectModal .modal-dialog .modal-content .modal-body .year {
+#projectModal .modal-content .modal-body .year {
   font-size: 25px;
   font-style: italic;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-weight: 800;
 }
-#projectModal .modal-dialog .modal-content .modal-body .moreInfo {
+#projectModal .modal-content .moreInfo {
+  display: flex;
   font-weight: 800;
   background: radial-gradient(yellow, orange 90%, transparent);
   padding: 10px;
-  border: 3px outset black;
+  border: 3px solid black;
   border-radius: 5px;
 }
-#projectModal .modal-dialog .modal-content .modal-body h3 {
+#projectModal .modal-content .moreInfo .col1 {
+  width: 80%;
+}
+#projectModal .modal-content .moreInfo .col2 {
+  width: 20%;
+}
+#projectModal .modal-content .moreInfo h3 {
   font-size: 20px;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, "Times New Roman", serif;
   text-align: right;
 }
-#projectModal .modal-dialog .modal-content .modal-body ul {
+#projectModal .modal-content .moreInfo ul {
   direction: rtl;
   text-align: right;
 }
-#projectModal .modal-dialog .modal-content .modal-body ul li {
+#projectModal .modal-content .moreInfo ul li {
   direction: rtl;
   font-variant: small-caps;
   list-style-type: ">>";
