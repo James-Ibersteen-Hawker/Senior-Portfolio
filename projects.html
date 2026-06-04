@@ -62,6 +62,7 @@
             :link="item.link"
             :description="item.description"
             :time="item.creationdate"
+            :year="item.year"
             loading="lazy"
             @click="select(i)"
           ></project>
@@ -148,7 +149,12 @@
       <!--template-->
     </script>
     <script type="text/x-template" id="project_item">
-      <div class="project" @click="click">
+      <div class="project" @click="click" :class="{
+        'sophomore': year === 'Sophomore Year',
+        'junior': year === 'Junior Year',
+        'senior': year === 'Senior Year'
+      }">
+      {{year}}
         <div class="time">
           <div class="month display">
             <span :style="{'--value': mm}">888</span>

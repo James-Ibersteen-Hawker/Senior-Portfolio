@@ -140,6 +140,7 @@ export const project = {
     link: {type: String, required: true},
     description: {type: String, default: ""},
     time: {type: Array, default: () => []},
+    year: {type: String, default: "Sophomore Year"}
   },
   emits: ['click'],
   setup(props, {emit}) {

@@ -540,7 +540,7 @@ body {
 }
 .control {
   height: 60px;
-  background: url(../time-machine/gray-grime.png);
+  background: url($gray-grime);
   background-size: cover;
   background-position: center;
   border-top: 3px solid rgb(172, 172, 172);
@@ -567,7 +567,8 @@ body {
   }
   label {
     width: 100px;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgb(255, 255, 255);
+    font-weight: 600;
     font-family: "Courier New", Courier, monospace;
     background-color: black;
     height: 30px !important;
@@ -626,9 +627,6 @@ $iframe-width: 400px;
     scrollbar-width: none;
     padding-bottom: 150px;
     .project {
-      background:
-        linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-        url(../time-machine/gray-grime.png);
       background-size: cover;
       border: 5px outset black;
       box-shadow: 0px 0px 10px black;
@@ -718,6 +716,17 @@ $iframe-width: 400px;
     backdrop-filter: blur(10px);
     mask-image: linear-gradient(to bottom, transparent, white);
   }
+}
+.project.sophomore {
+  background: url(../time-machine/rusty-grime.jpg);
+}
+.project.junior {
+  background:
+        linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+        url($gray-grime);
+}
+.project.senior {
+    background: url(../time-machine/new-metal.jpg);
 }
 @media screen and (max-width: 600px) {
   .projects {

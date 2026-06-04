@@ -21,7 +21,8 @@
             4,
             19,
             2024
-        ]
+        ],
+        "year": "Sophomore Year"
     },
     {
         "name": "Tromso Vacation Website",
@@ -45,7 +46,8 @@
             10,
             12,
             2023
-        ]
+        ],
+        "year": "Sophomore Year"
     },
     {
         "name": "Prohibition Essay",
@@ -55,7 +57,8 @@
             1,
             22,
             2024
-        ]
+        ],
+        "year": "Sophomore Year"
     },
     {
         "name": "The Solar System",
@@ -79,7 +82,8 @@
             11,
             7,
             2023
-        ]
+        ],
+        "year": "Sophomore Year"
     },
     {
         "name": "Kelly Johnson Tribute",
@@ -89,7 +93,8 @@
             2,
             21,
             2024
-        ]
+        ],
+        "year": "Sophomore Year"
     },
     {
         "name": "How to Embed",
@@ -99,7 +104,8 @@
             3,
             30,
             2024
-        ]
+        ],
+        "year": "Sophomore Year"
     },
     {
         "name": "Falling Seasons",
@@ -109,7 +115,8 @@
             11,
             28,
             2023
-        ]
+        ],
+        "year": "Sophomore Year"
     },
     {
         "name": "Chemistry Study Guide",
@@ -119,7 +126,8 @@
             12,
             21,
             2023
-        ]
+        ],
+        "year": "Sophomore Year"
     },
     {
         "name": "Dracula's Castle",
@@ -129,7 +137,8 @@
             10,
             22,
             2023
-        ]
+        ],
+        "year": "Sophomore Year"
     },
     {
         "name": "Sophomore Portfolio",
@@ -139,7 +148,8 @@
             11,
             6,
             2023
-        ]
+        ],
+        "year": "Sophomore Year"
     },
     {
         "name": "Marlboro Farmer's Market",
@@ -149,7 +159,8 @@
             3,
             8,
             2024
-        ]
+        ],
+        "year": "Sophomore Year"
     },
     {
         "name": "My First Bootstrap",
@@ -159,7 +170,8 @@
             1,
             3,
             2024
-        ]
+        ],
+        "year": "Sophomore Year"
     },
     {
         "name": "Music and Art Academy",
@@ -183,7 +195,8 @@
             1,
             16,
             2026
-        ]
+        ],
+        "year": "Senior Year"
     },
     {
         "name": "TXT-DRIVER.exe",
@@ -207,7 +220,8 @@
             5,
             13,
             2025
-        ]
+        ],
+        "year": "Junior Year"
     },
     {
         "name": "Text Pong",
@@ -217,7 +231,8 @@
             5,
             8,
             2025
-        ]
+        ],
+        "year": "Junior Year"
     },
     {
         "name": "RIT College Website",
@@ -227,7 +242,8 @@
             9,
             9,
             2025
-        ]
+        ],
+        "year": "Senior Year"
     },
     {
         "name": "Dreidel Website",
@@ -237,7 +253,8 @@
             12,
             16,
             2025
-        ]
+        ],
+        "year": "Senior Year"
     },
     {
         "name": "NJIT jQuery Project",
@@ -247,7 +264,8 @@
             11,
             4,
             2025
-        ]
+        ],
+        "year": "Senior Year"
     },
     {
         "name": "Senior Portfolio",
@@ -257,7 +275,8 @@
             5,
             5,
             2026
-        ]
+        ],
+        "year": "Senior Year"
     },
     {
         "name": "NJIT Check Movies",
@@ -267,7 +286,8 @@
             12,
             1,
             2025
-        ]
+        ],
+        "year": "Senior Year"
     },
     {
         "name": "Little Bird Toy Company",
@@ -277,7 +297,8 @@
             6,
             4,
             2025
-        ]
+        ],
+        "year": "Junior Year"
     },
     {
         "name": "Wildcard Website",
@@ -301,7 +322,8 @@
             3,
             20,
             2025
-        ]
+        ],
+        "year": "Junior Year"
     },
     {
         "name": "Monthly Website Gallery",
@@ -311,7 +333,8 @@
             9,
             30,
             2024
-        ]
+        ],
+        "year": "Junior Year"
     },
     {
         "name": "Summer-tainment Site",
@@ -321,7 +344,8 @@
             9,
             11,
             2024
-        ]
+        ],
+        "year": "Junior Year"
     },
     {
         "name": "Look Ma, I'm Famous",
@@ -331,7 +355,8 @@
             10,
             17,
             2024
-        ]
+        ],
+        "year": "Junior Year"
     },
     {
         "name": "TCA1",
@@ -341,7 +366,8 @@
             11,
             1,
             2024
-        ]
+        ],
+        "year": "Junior Year"
     },
     {
         "name": "Madlibs",
@@ -351,7 +377,8 @@
             11,
             12,
             2024
-        ]
+        ],
+        "year": "Junior Year"
     },
     {
         "name": "Name Generator",
@@ -361,7 +388,8 @@
             12,
             10,
             2024
-        ]
+        ],
+        "year": "Junior Year"
     },
     {
         "name": "Magic 8 Ball",
@@ -371,7 +399,8 @@
             11,
             26,
             2024
-        ]
+        ],
+        "year": "Junior Year"
     },
     {
         "name": "Rock Paper Scissors Matrix",
@@ -395,7 +424,8 @@
             2,
             5,
             2025
-        ]
+        ],
+        "year": "Junior Year"
     },
     {
         "name": "To Do List",
@@ -405,7 +435,8 @@
             2,
             25,
             2025
-        ]
+        ],
+        "year": "Junior Year"
     },
     {
         "name": "Reversi",
@@ -429,13 +460,15 @@
             10,
             15,
             2025
-        ]
+        ],
+        "year": "Senior Year"
     },
     {
         "name": "Battleship",
         "link": "",
         "description": "A single-player battleship game.",
-        "creationdate": [12, 2, 2023]
+        "creationdate": [12, 2, 2023],
+        "year": "Sophomore Year"
     },
     {
         "name": "KDTree Algorithm",
@@ -459,7 +492,8 @@
             9,
             22,
             2023
-        ]
+        ],
+        "year": "Sophomore Year"
     },
     {
         "name": "Let's Go Camping",
@@ -469,7 +503,8 @@
             10,
             3,
             2023
-        ]
+        ],
+        "year": "Sophomore Year"
     },
     {
         "name": "An Epic Guide to Epic Quests",
@@ -479,7 +514,8 @@
             11,
             1,
             2023
-        ]
+        ],
+        "year": "Sophomore Year"
     },
     {
         "name": "Chess Board",
@@ -489,7 +525,8 @@
             10,
             5,
             2023
-        ]
+        ],
+        "year": "Sophomore Year"
     },
     {
         "name": "Halloween Movie",
@@ -499,7 +536,8 @@
             10,
             19,
             2023
-        ]
+        ],
+        "year": "Sophomore Year"
     },
     {
         "name": "Nav Bar",
@@ -509,7 +547,8 @@
             10,
             25,
             2023
-        ]
+        ],
+        "year": "Sophomore Year"
     },
     {
         "name": "NJ Lighthouses",
@@ -519,7 +558,8 @@
             11,
             22,
             2023
-        ]
+        ],
+        "year": "Sophomore Year"
     },
     {
         "name": "Puppies",
@@ -529,7 +569,8 @@
             1,
             12,
             2024
-        ]
+        ],
+        "year": "Sophomore Year"
     },
     {
         "name": "Album Covers",
@@ -539,7 +580,8 @@
             4,
             15,
             2024
-        ]
+        ],
+        "year": "Sophomore Year"
     },
     {
         "name": "Sloan Kettering Cancer Initiative",
@@ -549,7 +591,8 @@
             5,
             24,
             2024
-        ]
+        ],
+        "year": "Sophomore Year"
     },
     {
         "name": "MLK Tribute",
@@ -559,6 +602,7 @@
             1,
             23,
             2024
-        ]
+        ],
+        "year": "Sophomore Year"
     }
 ]
